@@ -1,0 +1,189 @@
+{
+  "itemGroup.ItemsTab": "Unwanted Items",
+  "itemGroup.BlocksTab": "Unwanted Blocks",
+  "itemGroup.ArmorAndToolsTab": "Unwanted Armor & Tools",
+  "itemGroup.StairsTab": "Unwanted Stairs",
+  "itemGroup.SlabTab": "Unwanted Slabs",
+  "itemGroup.WallTab": "Unwanted Walls",
+  "itemGroup.RedstoneTab": "Unwanted Redstone Tab",
+  "itemGroup.ToolsTab": "Unwanted Tools Tab",
+  "itemGroup.CombatTab": "Unwanted Combat Tab",
+
+  "item.unwanted.rough_ruby": "Rough Ruby",
+  "item.unwanted.ruby": "Ruby",
+  "item.unwanted.pure_ruby": "Pure Ruby",
+  "block.unwanted.ruby_ore": "Ruby Ore",
+  "block.unwanted.ruby_block": "Block Of Ruby",
+
+  "item.unwanted.chisel": "Chisel",
+  "item.unwanted.netherite_chisel": "Netherite Chisel",
+
+  "block.unwanted.torrid_steel_ore": "Torrid Steel Ore",
+  "block.unwanted.torrid_steel_block": "Block Of Torrid Steel",
+  "item.unwanted.torrid_steel_ingot": "Torrid Steel Ingot",
+  "item.unwanted.torrid_steel_nugget": "Torrid Steel Nugget",
+  "item.unwanted.torrid_steel_powder": "Torrid Steel Powder",
+  "block.unwanted.torrid_steel_bars": "Torrid Steel Bars",
+
+  "item.unwanted.pure_blaze_powder": "Pure Blaze Powder",
+  "item.unwanted.blazing_water": "Blazing Water",
+
+  "item.unwanted.goblin_warrior_spawn_egg": "Goblin Warrior Spawn Egg",
+
+  "block.unwanted.marble": "Marble",
+  "block.unwanted.smooth_marble": "Smooth Marble",
+  "block.unwanted.polished_marble": "Polished Marble",
+  "block.unwanted.marble_bricks": "Marble Bricks",
+  "block.unwanted.cracked_marble_bricks": "Cracked Marble Bricks",
+  "block.unwanted.mossy_marble_bricks": "Mossy Marble Bricks",
+
+  "block.unwanted.chiseled_w_marble": "Chiseled Marble",
+  "block.unwanted.chiseled_s_marble": "Chiseled Marble",
+  "block.unwanted.chiseled_c_marble": "Chiseled Marble",
+  "block.unwanted.chiseled_e_marble": "Chiseled Marble",
+
+  "block.unwanted.marble_pillar": "Marble Pillar",
+
+  "item.unwanted.marble_shard": "Marble Shard",
+
+  "block.unwanted.marble_stairs": "Marble Stairs",
+  "block.unwanted.smooth_marble_stairs": "Smooth Marble Stairs",
+  "block.unwanted.polished_marble_stairs": "Polished Marble Stairs",
+  "block.unwanted.marble_bricks_stairs": "Marble Brick Stairs",
+  "block.unwanted.cracked_marble_bricks_stairs": "Cracked Marble Brick Stairs",
+  "block.unwanted.mossy_marble_bricks_stairs": "Mossy Marble Brick Stairs",
+
+  "block.unwanted.marble_slab": "Marble Slab",
+  "block.unwanted.smooth_marble_slab": "Smooth Marble Slab",
+  "block.unwanted.polished_marble_slab": "Polished Marble Slab",
+  "block.unwanted.marble_bricks_slab": "Marble Brick Slab",
+  "block.unwanted.cracked_marble_bricks_slab": "Cracked Marble Brick Slab",
+  "block.unwanted.mossy_marble_bricks_slab": "Mossy Marble Brick Slab",
+
+  "block.unwanted.marble_wall": "Marble Wall",
+  "block.unwanted.smooth_marble_wall": "Smooth Marble Wall",
+  "block.unwanted.polished_marble_wall": "Polished Marble Wall",
+  "block.unwanted.marble_bricks_wall": "Marble Brick Wall",
+  "block.unwanted.cracked_marble_bricks_wall": "Cracked Marble Brick Wall",
+  "block.unwanted.mossy_marble_bricks_wall": "Mossy Marble Brick Wall",
+
+  "block.unwanted.double_polished_marble_slab": "Double Polished Marble Slab",
+  "block.unwanted.double_smooth_marble_slab": "Double Smooth Marble Slab",
+
+  "block.unwanted.marble_button": "Marble Button",
+  "block.unwanted.marble_pressure_plate": "Marble Pressure Plate",
+
+  "block.unwanted.torrid_steel_bars_door": "Torrid Steel Bars Door",
+  "block.unwanted.torrid_steel_bars_trapdoor": "Torrid Steel Bars Trapdoor",
+  "block.unwanted.torrid_steel_door": "Torrid Steel Door",
+  "block.unwanted.torrid_steel_trapdoor": "Torrid Steel Trapdoor",
+  "block.unwanted.torrid_steel_button": "Torrid Steel Button",
+  "block.unwanted.torrid_steel_pressure_plate": "Torrid Steel Pressure Plate",
+
+  "item.unwanted.ruby_detector": "Valuables Detector",
+  "item.unwanted.ruby_detector.no_valuables": "No Valuables Found!",
+
+  "tooltip.unwanted.ruby_detector.tooltip.shift": "Right Click to find Valuables!",
+  "tooltip.unwanted.ruby_detector.tooltip": "Press §eSHIFT§r for more Information!",
+
+  "item.unwanted.embarium": "Embarium",
+  "block.unwanted.embarium_block": "Block Of Embarium",
+  "block.unwanted.embarium_lamp_block": "Embarium Lamp",
+  "block.unwanted.embarium_ore": "Embarium Ore",
+  "block.unwanted.deepslate_embarium_ore": "Deepslate Embarium Ore",
+
+  "block.unwanted.white_bouncer_block": "White Bouncy Block",
+  "block.unwanted.black_bouncer_block": "Black Bouncy Block",
+  "block.unwanted.gray_bouncer_block": "Gray Bouncy Block",
+  "block.unwanted.light_gray_bouncer_block": "Light Gray Bouncy Block",
+  "block.unwanted.brown_bouncer_block": "Brown Bouncy Block",
+  "block.unwanted.blue_bouncer_block": "Blue Bouncy Block",
+  "block.unwanted.cyan_bouncer_block": "Cyan Bouncy Block",
+  "block.unwanted.light_blue_bouncer_block": "Light Blue Bouncy Block",
+  "block.unwanted.green_bouncer_block": "Green Bouncy Block",
+  "block.unwanted.lime_bouncer_block": "Lime Bouncy Block",
+  "block.unwanted.magenta_bouncer_block": "Magenta Bouncy Block",
+  "block.unwanted.pink_bouncer_block": "Pink Bouncy Block",
+  "block.unwanted.purple_bouncer_block": "Purple Bouncy Block",
+  "block.unwanted.red_bouncer_block": "Red Bouncy Block",
+  "block.unwanted.yellow_bouncer_block": "Yellow Bouncy Block",
+  "block.unwanted.orange_bouncer_block": "Orange Bouncy Block",
+
+  "block.unwanted.speeder_block": "Embarium Infused Slime",
+
+  "block.unwanted.gem_cutting_station": "Gem Cutting Station",
+  "block.unwanted.gem_infuser": "Gem Infuser",
+  "item.unwanted.gem_infuser": "Gem Infuser",
+  "block.unwanted.torrid_furnace": "Torrid Furnace",
+
+  "block.unwanted.torrid_bush": "Torrid Bush",
+  "block.unwanted.potted_torrid_bush": "Potted Torrid Bush",
+
+  "item.unwanted.embarium_sword": "Embarium Sword",
+  "item.unwanted.embarium_pickaxe": "Embarium Pickaxe",
+  "item.unwanted.embarium_axe": "Embarium Axe",
+  "item.unwanted.embarium_shovel": "Embarium Shovel",
+  "item.unwanted.embarium_hoe": "Embarium Hoe",
+
+  "item.unwanted.torrid_steel_sword": "Torrid Steel Sword",
+  "item.unwanted.torrid_steel_pickaxe": "Torrid Steel Pickaxe",
+  "item.unwanted.torrid_steel_axe": "Torrid Steel Axe",
+  "item.unwanted.torrid_steel_shovel": "Torrid Steel Shovel",
+  "item.unwanted.torrid_steel_hoe": "Torrid Steel Hoe",
+
+  "item.unwanted.torrid_embarium_sword": "Torrid Steel Embarium Sword",
+  "item.unwanted.torrid_embarium_pickaxe": "Torrid Steel Embarium Pickaxe",
+  "item.unwanted.torrid_embarium_axe": "Torrid Steel Axe",
+  "item.unwanted.torrid_embarium_shovel": "Torrid Steel Embarium Shovel",
+  "item.unwanted.torrid_embarium_hoe": "Torrid Steel Embarium Hoe",
+
+  "item.unwanted.embarium_helmet": "Embarium Helmet",
+  "item.unwanted.embarium_chestplate": "Embarium Chestplate",
+  "item.unwanted.embarium_leggings": "Embarium Leggings",
+  "item.unwanted.embarium_boots": "Embarium Boots",
+
+  "item.unwanted.torrid_steel_helmet": "Torrid Steel Helmet",
+  "item.unwanted.torrid_steel_chestplate": "Torrid Steel Chestplate",
+  "item.unwanted.torrid_steel_leggings": "Torrid Steel Leggings",
+  "item.unwanted.torrid_steel_boots": "Torrid Steel Boots",
+
+  "item.unwanted.torrid_embarium_helmet": "Torrid Steel Embarium Helmet",
+  "item.unwanted.torrid_embarium_chestplate": "Torrid Steel Embarium Chestplate",
+  "item.unwanted.torrid_embarium_leggings": "Torrid Steel Embarium Leggings",
+  "item.unwanted.torrid_embarium_boots": "Torrid Steel Embarium Boots",
+
+  "sounds.unwanted.detector_found_ore": "Detector Found Ore Sound",
+  "item.unwanted.darkness_music_disc": "Music Disc",
+  "item.unwanted.darkness_music_disc.desc": "Dark_King_4888 - Darkness",
+
+  "item.unwanted.cave_whispers_music_disc": "Music Disc",
+  "item.unwanted.cave_whispers_music_disc.desc": "Centek - Cave Whispers",
+
+  "block.unwanted.ebony_log": "Ebony Log",
+  "block.unwanted.ebony_planks": "Ebony Planks",
+  "block.unwanted.ebony_wood": "Ebony Wood",
+  "block.unwanted.stripped_ebony_log": "Stripped Ebony Log",
+  "block.unwanted.stripped_ebony_wood": "Stripped Ebony Wood",
+  "block.unwanted.ebony_leaves": "Ebony Leaves",
+  "block.unwanted.ebony_sapling": "Ebony Sapling",
+
+  "block.unwanted.ebony_stairs": "Ebony Stairs",
+  "block.unwanted.ebony_slab": "Ebony Slab",
+  "block.unwanted.ebony_fence": "Ebony Fence",
+  "block.unwanted.ebony_fence_gate": "Ebony Fence Gate",
+  "block.unwanted.ebony_door": "Ebony Door",
+  "block.unwanted.ebony_trapdoor": "Ebony Trapdoor",
+  "block.unwanted.ebony_button": "Ebony Button",
+  "block.unwanted.ebony_pressure_plate": "Ebony Pressure Plate",
+
+
+  "effect.unwanted.energy": "Energy",
+  "item.minecraft.potion.effect.energy_potion": "Energy Potion",
+  "item.minecraft.splash_potion.effect.energy_potion": "Splash Potion Of Energy",
+  "item.minecraft.lingering_potion.effect.energy_potion": "Lingering Potion of Energy",
+
+  "entity.minecraft.villager.unwanted.enchanter": "Enchanter",
+  "entity.minecraft.villager.unwanted.musician": "Musician",
+  "entity.minecraft.villager.unwanted.musician": "Gem Cutter"
+
+}

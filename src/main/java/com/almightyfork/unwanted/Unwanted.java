@@ -1,6 +1,8 @@
 package com.almightyfork.unwanted;
 
+import com.almightyfork.unwanted.item.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -22,6 +24,8 @@ public class Unwanted
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -33,7 +37,19 @@ public class Unwanted
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-
+        if(event.getTab() == CreativeModeTabs.SEARCH) {
+            event.accept(ModItems.ROUGH_RUBY);
+            event.accept(ModItems.RUBY);
+            event.accept(ModItems.PURE_RUBY);
+            event.accept(ModItems.TORRID_STEEL_INGOT);
+            event.accept(ModItems.TORRID_STEEL_NUGGET);
+            event.accept(ModItems.TORRID_STEEL_POWDER);
+            event.accept(ModItems.EMBARIUM);
+            event.accept(ModItems.CHISEL);
+            event.accept(ModItems.NETHERITE_CHISEL);
+            event.accept(ModItems.MARBLE_SHARD);
+            event.accept(ModItems.BLAZING_WATER);
+        }
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
