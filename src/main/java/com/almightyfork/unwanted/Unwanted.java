@@ -1,6 +1,7 @@
 package com.almightyfork.unwanted;
 
 import com.almightyfork.unwanted.item.ModItems;
+import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -37,7 +38,8 @@ public class Unwanted
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if(event.getTab() == CreativeModeTabs.SEARCH) {
+
+        if(event.getTab() == ModCreativeModeTabs.ITEMS_TAB) {
             event.accept(ModItems.ROUGH_RUBY);
             event.accept(ModItems.RUBY);
             event.accept(ModItems.PURE_RUBY);
