@@ -1,6 +1,6 @@
 {
   "parent" : "item/generated",
   "textures" : {
-    "layer0" : "darkssurvival:item/darkness_music_disc"
+    "layer0" : "unwanted:item/darkness_music_disc"
   }
 }

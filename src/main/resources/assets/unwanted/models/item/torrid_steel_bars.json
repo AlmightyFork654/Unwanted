@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "darkssurvival:block/torrid_steel_bars"
+    "layer0": "unwanted:block/torrid_steel_bars"
   }
 }

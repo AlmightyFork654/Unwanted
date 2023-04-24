@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "darkssurvival:item/chisel"
+    "layer0": "unwanted:item/chisel"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "darkssurvival:block/torrid_bush"
+    "layer0": "unwanted:block/torrid_bush"
   }
 }

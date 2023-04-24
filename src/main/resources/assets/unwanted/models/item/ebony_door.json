@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "darkssurvival:item/ebony_door"
+    "layer0": "unwanted:item/ebony_door"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "darkssurvival:item/torrid_steel_hoe"
+    "layer0": "unwanted:item/torrid_steel_hoe"
   }
 }

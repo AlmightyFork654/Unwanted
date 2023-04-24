@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "darkssurvival:item/embarium_sword"
+    "layer0": "unwanted:item/embarium_sword"
   }
 }

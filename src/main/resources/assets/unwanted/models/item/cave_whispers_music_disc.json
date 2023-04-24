@@ -1,6 +1,6 @@
 {
   "parent" : "item/generated",
   "textures" : {
-    "layer0" : "darkssurvival:item/cave_whispers_music_disc"
+    "layer0" : "unwanted:item/cave_whispers_music_disc"
   }
 }

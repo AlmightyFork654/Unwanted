@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "darkssurvival:item/embarium_pickaxe"
+    "layer0": "unwanted:item/embarium_pickaxe"
   }
 }

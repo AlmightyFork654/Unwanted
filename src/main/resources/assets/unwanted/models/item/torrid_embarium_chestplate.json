@@ -1,6 +1,6 @@
 {
   "parent" : "item/generated",
   "textures" : {
-    "layer0" : "darkssurvival:item/torrid_embarium_chestplate"
+    "layer0" : "unwanted:item/torrid_embarium_chestplate"
   }
 }

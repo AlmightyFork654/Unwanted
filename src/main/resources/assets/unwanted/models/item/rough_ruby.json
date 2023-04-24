@@ -1,6 +1,6 @@
 {
   "parent" : "item/generated",
   "textures" : {
-    "layer0" : "darkssurvival:item/rough_ruby"
+    "layer0" : "unwanted:item/rough_ruby"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "darkssurvival:item/ruby_detector"
+    "layer0": "unwanted:item/ruby_detector"
   }
 }
