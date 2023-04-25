@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "unwanted:block/smooth_marble_slab"
+    },
+    "type=double": {
+      "model": "unwanted:block/double_smooth_marble_slab"
+    },
+    "type=top": {
+      "model": "unwanted:block/smooth_marble_slab_top"
+    }
+  }
+}

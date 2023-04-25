@@ -1,0 +1,20 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "unwanted:block/red_bouncer_block",
+			"y": 0
+		},
+		"facing=east": {
+			"model": "unwanted:block/red_bouncer_block",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "unwanted:block/red_bouncer_block",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "unwanted:block/red_bouncer_block",
+			"y": 270
+		}
+	}
+}

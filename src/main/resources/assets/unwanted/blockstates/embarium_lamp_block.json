@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "unwanted:block/embarium_lamp_block_off"
+    },
+    "clicked=true": {
+      "model": "unwanted:block/embarium_lamp_block"
+    }
+  }
+}

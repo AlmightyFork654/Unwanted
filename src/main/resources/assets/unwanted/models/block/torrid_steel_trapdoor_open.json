@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_open",
+  "textures": {
+    "texture": "unwanted:block/torrid_steel_trapdoor"
+  }
+}

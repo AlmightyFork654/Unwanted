@@ -1,10 +1,10 @@
 {
-  "creativemodetab.items_tab": "Unwanted Items",
+  "itemGroup.ItemsTab": "Unwanted Items",
   "itemGroup.BlocksTab": "Unwanted Blocks",
   "itemGroup.ArmorAndToolsTab": "Unwanted Armor & Tools",
   "itemGroup.StairsTab": "Unwanted Stairs",
-  "itemGroup.SlabTab": "Unwanted Slabs",
-  "itemGroup.WallTab": "Unwanted Walls",
+  "itemGroup.SlabsTab": "Unwanted Slabs",
+  "itemGroup.WallsTab": "Unwanted Walls",
   "itemGroup.RedstoneTab": "Unwanted Redstone Tab",
   "itemGroup.ToolsTab": "Unwanted Tools Tab",
   "itemGroup.CombatTab": "Unwanted Combat Tab",

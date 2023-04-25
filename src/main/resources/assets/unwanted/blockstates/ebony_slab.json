@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "unwanted:block/ebony_slab"
+    },
+    "type=double": {
+      "model": "unwanted:block/ebony_planks"
+    },
+    "type=top": {
+      "model": "unwanted:block/ebony_slab_top"
+    }
+  }
+}

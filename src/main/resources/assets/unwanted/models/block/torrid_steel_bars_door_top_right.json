@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "unwanted:block/torrid_steel_bars_door_bottom",
+    "top": "unwanted:block/torrid_steel_bars_door_top"
+  }
+}

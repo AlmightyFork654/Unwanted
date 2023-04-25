@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "unwanted:block/ebony_door_bottom",
+    "top": "unwanted:block/ebony_door_top"
+  }
+}
