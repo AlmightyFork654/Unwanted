@@ -19,7 +19,7 @@ public class SuperArmorItem extends ArmorItem {
                     .put(ModArmorMaterials.TORRID_EMBARIUM,
                             new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 50, 0)).build();
 
-    public SuperArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
+    public SuperArmorItem(ArmorMaterial material, ArmorItem.Type slot, Properties settings) {
         super(material, slot, settings);
     }
 

@@ -9,6 +9,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
@@ -21,7 +22,7 @@ public class FireArmorItem extends ArmorItem {
                     .put(ModArmorMaterials.TORRID,
                             new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 25, 0)).build();
 
-    public FireArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
+    public FireArmorItem(ArmorMaterial material, ArmorItem.Type slot, Item.Properties settings) {
         super(material, slot, settings);
     }
 
@@ -54,7 +55,7 @@ public class FireArmorItem extends ArmorItem {
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
 
             if(new Random().nextFloat() > 0.001f) { // 0.1% of damaging the armor! Possibly!
-                player.getInventory().hurtArmor(DamageSource.MAGIC, 1f, new int[]{0, 1, 2, 3});
+                player.getInventory().hurtArmor(player.damageSources().magic(), 1f, new int[]{0, 1, 2, 3});
             }
         }
     }

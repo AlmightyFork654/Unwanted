@@ -118,31 +118,31 @@ public class ModItems {
     //embarium
 
     public static final RegistryObject<Item> EMBARIUM_HELMET = ITEMS.register("embarium_helmet",
-            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, EquipmentSlot.HEAD, new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> EMBARIUM_CHESTPLATE = ITEMS.register("embarium_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, EquipmentSlot.CHEST, new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> EMBARIUM_LEGGINGS = ITEMS.register("embarium_leggings",
-            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, EquipmentSlot.LEGS, new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> EMBARIUM_BOOTS = ITEMS.register("embarium_boots",
-            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, EquipmentSlot.FEET, new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.EMBARIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> TORRID_HELMET = ITEMS.register("torrid_steel_helmet",
-            () -> new ArmorItem(ModArmorMaterials.TORRID, EquipmentSlot.HEAD, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.TORRID, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TORRID_CHESTPLATE = ITEMS.register("torrid_steel_chestplate",
-            () -> new FireArmorItem(ModArmorMaterials.TORRID, EquipmentSlot.CHEST, new Item.Properties().fireResistant()));
+            () -> new FireArmorItem(ModArmorMaterials.TORRID, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TORRID_LEGGINGS = ITEMS.register("torrid_steel_leggings",
-            () -> new ArmorItem(ModArmorMaterials.TORRID, EquipmentSlot.LEGS, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.TORRID, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TORRID_BOOTS = ITEMS.register("torrid_steel_boots",
-            () -> new ArmorItem(ModArmorMaterials.TORRID, EquipmentSlot.FEET, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.TORRID, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> TORRID_EMBARIUM_HELMET = ITEMS.register("torrid_embarium_helmet",
-            () -> new ArmorItem(ModArmorMaterials.TORRID_EMBARIUM, EquipmentSlot.HEAD, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.TORRID_EMBARIUM, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TORRID_EMBARIUM_CHESTPLATE = ITEMS.register("torrid_embarium_chestplate",
-            () -> new SuperArmorItem(ModArmorMaterials.TORRID_EMBARIUM, EquipmentSlot.CHEST, new Item.Properties().fireResistant()));
+            () -> new SuperArmorItem(ModArmorMaterials.TORRID_EMBARIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TORRID_EMBARIUM_LEGGINGS = ITEMS.register("torrid_embarium_leggings",
-            () -> new ArmorItem(ModArmorMaterials.TORRID_EMBARIUM, EquipmentSlot.LEGS, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.TORRID_EMBARIUM, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TORRID_EMBARIUM_BOOTS = ITEMS.register("torrid_embarium_boots",
-            () -> new ArmorItem(ModArmorMaterials.TORRID_EMBARIUM, EquipmentSlot.FEET, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.TORRID_EMBARIUM, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant()));
 
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);

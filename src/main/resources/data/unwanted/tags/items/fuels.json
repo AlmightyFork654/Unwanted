@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "darkssurvival:pure_blaze_powder",
+    "minecraft:blaze_powder",
+    "minecraft:blaze_rod"
+  ]
+}

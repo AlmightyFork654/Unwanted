@@ -86,7 +86,7 @@ public class BouncerBlock extends Block {
         if (pEntity.isSuppressingBounce()) {
             super.fallOn(pLevel, pState, pPos, pEntity, pFloat);
         } else {
-            pEntity.causeFallDamage(pFloat, 0.0F, DamageSource.FALL);
+            pEntity.causeFallDamage(pFloat, 0.0F, pLevel.damageSources().fall());
         }
 
     }
