@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "darkssurvival:chisel",
-    "darkssurvival:netherite_chisel"
+    "unwanted:chisel",
+    "unwanted:netherite_chisel"
   ]
 }

@@ -19,9 +19,9 @@ public class ModMenuTypes {
 
 //    public static final RegistryObject<MenuType<GemInfuserMenu>> GEM_INFUSER_MENU =
 //            registerMenuType(GemInfuserMenu::new, "gem_infuser_menu");
-//
-//    public static final RegistryObject<MenuType<TorridFurnaceMenu>> TORRID_FURNACE_MENU =
-//            registerMenuType(TorridFurnaceMenu::new, "torrid_furnace_menu");
+
+    public static final RegistryObject<MenuType<TorridFurnaceMenu>> TORRID_FURNACE_MENU =
+            registerMenuType(TorridFurnaceMenu::new, "torrid_furnace_menu");
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                  String name) {

@@ -3,6 +3,7 @@ package com.almightyfork.unwanted.block;
 import com.almightyfork.unwanted.Unwanted;
 import com.almightyfork.unwanted.block.custom.*;
 import com.almightyfork.unwanted.item.ModItems;
+import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.worldgen.tree.EbonyTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -57,7 +58,7 @@ public class ModBlocks {
             () -> new IronBarsBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(5F, 6F).destroyTime(5).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final RegistryObject<Block> EMBARIUM_BLOCK = registerBlock("embarium_block",
-            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SoundType.AMETHYST)
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(ModSounds.EMBARIUM_SOUNDS)
                     .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> 8)));
 
     public static final RegistryObject<Block> EMBARIUM_LAMP_BLOCK = registerBlock("embarium_lamp_block",
@@ -69,6 +70,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GEM_CUTTING_STATION = registerBlock("gem_cutting_station",
             () -> new GemCuttingStationBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
+
+    public static final RegistryObject<Block> TORRID_FURNACE = registerBlock("torrid_furnace",
+            () -> new TorridFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
 
     //bouncy
 

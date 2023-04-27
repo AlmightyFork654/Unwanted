@@ -10,6 +10,7 @@ import com.almightyfork.unwanted.potion.effect.ModEffects;
 import com.almightyfork.unwanted.recipe.ModRecipes;
 import com.almightyfork.unwanted.screen.GemCuttingStationScreen;
 import com.almightyfork.unwanted.screen.ModMenuTypes;
+import com.almightyfork.unwanted.screen.TorridFurnaceScreen;
 import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.worldgen.ModConfiguredFeatures;
 import com.mojang.logging.LogUtils;
@@ -146,6 +147,7 @@ public class Unwanted
             event.accept(ModBlocks.SPEEDER_BLOCK);
             event.accept(ModBlocks.EMBARIUM_LAMP_BLOCK);
             event.accept(ModBlocks.GEM_CUTTING_STATION);
+            event.accept(ModBlocks.TORRID_FURNACE);
         }
 
         if(event.getTab() == ModCreativeModeTabs.SLABS_TAB) {
@@ -237,8 +239,8 @@ public class Unwanted
 
         MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
 //        MenuScreens.register(ModMenuTypes.GEM_INFUSER_MENU.get(), GemInfuserScreen::new);
-//        MenuScreens.register(ModMenuTypes.TORRID_FURNACE_MENU.get(), TorridFurnaceScreen::new);
-//
+        MenuScreens.register(ModMenuTypes.TORRID_FURNACE_MENU.get(), TorridFurnaceScreen::new);
+
 //        EntityRenderers.register(ModEntityTypes.GOBLIN_WARRIOR.get(), GoblinWarriorRenderer::new);
     }
 
