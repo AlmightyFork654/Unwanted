@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "unwanted:ruby_ore"
+  },
+  "result": "unwanted:rough_ruby",
+  "experience": 5,
+  "cookingtime": 100
+}

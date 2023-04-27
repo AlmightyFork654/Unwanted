@@ -1,0 +1,104 @@
+{
+  "detector_found_ore": {
+    "subtitle": "sounds.unwanted.detector_found_ore",
+    "sounds": [
+      "unwanted:misc/detector_found_ore"
+    ]
+  },
+  "embarium_break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "unwanted:embarium/break1",
+      "unwanted:embarium/break2",
+      "unwanted:embarium/break3",
+      "unwanted:embarium/break4"
+    ]
+  },
+  "embarium_step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "unwanted:embarium/step1",
+      "unwanted:embarium/step2",
+      "unwanted:embarium/step3",
+      "unwanted:embarium/step4",
+      "unwanted:embarium/step5",
+      "unwanted:embarium/step6",
+      "unwanted:embarium/step7",
+      "unwanted:embarium/step8",
+      "unwanted:embarium/step9",
+      "unwanted:embarium/step10",
+      "unwanted:embarium/step11",
+      "unwanted:embarium/step12",
+      "unwanted:embarium/step13",
+      "unwanted:embarium/step14"
+    ]
+  },
+  "embarium_place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "unwanted:embarium/place1",
+      "unwanted:embarium/place2",
+      "unwanted:embarium/place3",
+      "unwanted:embarium/place4"
+    ]
+  },
+  "embarium_hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "unwanted:embarium/step1",
+      "unwanted:embarium/step2",
+      "unwanted:embarium/step3",
+      "unwanted:embarium/step4",
+      "unwanted:embarium/step5",
+      "unwanted:embarium/step6",
+      "unwanted:embarium/step7",
+      "unwanted:embarium/step8",
+      "unwanted:embarium/step9",
+      "unwanted:embarium/step10",
+      "unwanted:embarium/step11",
+      "unwanted:embarium/step12",
+      "unwanted:embarium/step13",
+      "unwanted:embarium/step14"
+    ]
+  },
+  "embarium_fall": {
+    "sounds": [
+      "unwanted:embarium/step1",
+      "unwanted:embarium/step2",
+      "unwanted:embarium/step3",
+      "unwanted:embarium/step4",
+      "unwanted:embarium/step5",
+      "unwanted:embarium/step6",
+      "unwanted:embarium/step7",
+      "unwanted:embarium/step8",
+      "unwanted:embarium/step9",
+      "unwanted:embarium/step10",
+      "unwanted:embarium/step11",
+      "unwanted:embarium/step12",
+      "unwanted:embarium/step13",
+      "unwanted:embarium/step14"
+    ]
+  },
+  "darkness": {
+    "sounds": [
+      {
+        "name": "unwanted:music/darkness",
+        "stream": true
+      }
+    ]
+  },
+  "cave_whispers_old": {
+    "sounds": [
+      {
+        "name": "unwanted:music/cave_whispers",
+        "stream": true
+      }
+    ]
+  },
+  "cave_whispers": {
+    "subtitle": "item.unwanted.cave_whispers_music_disc.desc",
+    "sounds": [
+      "unwanted:music/cave_whispers"
+    ]
+  }
+}

@@ -1,6 +1,7 @@
-package com.almightyfork.unwanted.item;
+package com.almightyfork.unwanted.item.armor;
 
 import com.almightyfork.unwanted.Unwanted;
+import com.almightyfork.unwanted.item.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;

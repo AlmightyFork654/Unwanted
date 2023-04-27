@@ -1,4 +1,4 @@
-package com.almightyfork.unwanted.item;
+package com.almightyfork.unwanted.item.custom;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

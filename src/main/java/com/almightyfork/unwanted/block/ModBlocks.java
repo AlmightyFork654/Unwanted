@@ -65,6 +65,11 @@ public class ModBlocks {
                     .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> blockState.getValue(EmbariumLampBlock.CLICKED) ? 15 : 0)));
 
 
+    //crafting
+
+    public static final RegistryObject<Block> GEM_CUTTING_STATION = registerBlock("gem_cutting_station",
+            () -> new GemCuttingStationBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
+
     //bouncy
 
     public static final RegistryObject<Block> WHITE_BOUNCER_BLOCK = registerBlock("white_bouncer_block",

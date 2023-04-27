@@ -1,10 +1,8 @@
 package com.almightyfork.unwanted.item.armor;
 
-import com.almightyfork.unwanted.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;

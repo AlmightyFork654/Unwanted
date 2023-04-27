@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ddd",
+    "ddd",
+    "ddd"
+  ],
+  "key": {
+    "d": {
+      "item": "unwanted:ruby"
+    }
+  },
+  "result": {
+    "item": "unwanted:ruby_block",
+    "count": 1
+  }
+}

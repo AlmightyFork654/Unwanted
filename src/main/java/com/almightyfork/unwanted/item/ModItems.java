@@ -2,9 +2,13 @@ package com.almightyfork.unwanted.item;
 
 import com.almightyfork.unwanted.Unwanted;
 import com.almightyfork.unwanted.item.armor.FireArmorItem;
+import com.almightyfork.unwanted.item.armor.ModArmorMaterials;
+import com.almightyfork.unwanted.item.armor.ModTiers;
 import com.almightyfork.unwanted.item.armor.SuperArmorItem;
+import com.almightyfork.unwanted.item.custom.ModDiskItem;
+import com.almightyfork.unwanted.item.custom.PureBlazePowderItem;
 import com.almightyfork.unwanted.item.tools.*;
-import net.minecraft.world.entity.EquipmentSlot;
+import com.almightyfork.unwanted.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -53,9 +57,22 @@ public class ModItems {
     public static final RegistryObject<Item> BLAZING_WATER = ITEMS.register("blazing_water",
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 
+    //music
+
+    public static final RegistryObject<Item> DARKNESS_MUSIC_DISK = ITEMS.register("darkness_music_disc",
+            () -> new ModDiskItem(15, ModSounds.DARKNESS, 69));
+
+    public static final RegistryObject<Item> CAVE_WHISPERS_MUSIC_DISK = ITEMS.register("cave_whispers_music_disc",
+            () -> new ModDiskItem(15, ModSounds.CAVE_WHISPERS, 132));
+
     //tools&armor
 
         //tools
+
+    //Ruby detector
+
+    public static final RegistryObject<Item> RUBY_DETECTOR = ITEMS.register("ruby_detector",
+            () -> new RubyDetectorItem(new Item.Properties().durability(32).fireResistant()));
 
     //embarium
     public static final RegistryObject<Item> EMBARIUM_SWORD = ITEMS.register("embarium_sword",
@@ -96,6 +113,7 @@ public class ModItems {
             () -> new HoeItem(ModTiers.TORRID_EMBARIUM, 0, 0f, new Item.Properties().fireResistant()));
 
     //profundium
+        // netherite -> profundium
 
     //advanced
 
@@ -112,6 +130,7 @@ public class ModItems {
     //advanced netherite
 
     //advanced profundium
+        // Torrid, Embarium, Profundium...
 
     //armor
 

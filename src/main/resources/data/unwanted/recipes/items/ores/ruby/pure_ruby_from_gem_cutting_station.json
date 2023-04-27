@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:gem_cutting",
+  "ingredients": [
+    {
+      "item": "unwanted:ruby"
+    },
+    {
+      "item": "#unwanted:chisels"
+    }
+  ],
+  "output": {
+    "item": "unwanted:pure_ruby"
+  }
+}

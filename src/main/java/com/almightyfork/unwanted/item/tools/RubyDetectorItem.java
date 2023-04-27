@@ -1,6 +1,7 @@
 package com.almightyfork.unwanted.item.tools;
 
 import com.almightyfork.unwanted.misc.CustomTags;
+import com.almightyfork.unwanted.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.BlockPos;
@@ -40,14 +41,14 @@ public class RubyDetectorItem extends Item {
                     outputValuableCoordinates(positionClicked.below(i), player, blockBelow.getBlock());
                     foundBlock = true;
 
-                    pContext.getLevel().playSound(player, positionClicked, SoundEvents.SPYGLASS_USE, SoundSource.BLOCKS, 1f, 1f);
+                    pContext.getLevel().playSound(player, positionClicked, ModSounds.DETECTOR_FOUND_ORE.get(), SoundSource.BLOCKS, 1f, 1f);
 
                     break;
                 }
             }
 
             if(!foundBlock) {
-                player.sendSystemMessage(Component.translatable("item.darkssurvival.ruby_detector.no_valuables"));
+                player.sendSystemMessage(Component.translatable("item.unwanted.ruby_detector.no_valuables"));
             }
         }
 
@@ -60,14 +61,14 @@ public class RubyDetectorItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.darkssurvival.ruby_detector.tooltip.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.unwanted.ruby_detector.tooltip.shift"));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.darkssurvival.ruby_detector.tooltip"));
+            pTooltipComponents.add(Component.translatable("tooltip.unwanted.ruby_detector.tooltip"));
         }
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow) {
-        player.sendSystemMessage(Component.literal("Found " + blockBelow.getName() + " at " +
+        player.sendSystemMessage(Component.literal("Found " + blockBelow.getName().getString() + " at " +
                 "(" + blockPos.getX() + ", " + blockPos.getY() + "," + blockPos.getZ() + ")"));
     }
 

@@ -56,6 +56,15 @@ The things you don't want and the things you need.
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
+
+[[dependencies.unwanted]] #optional
+    # the modid of the dependency
+    modId="geckolib" #mandatory
+    mandatory=true #mandatory
+    versionRange="[4.1.3,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
 # Here's another dependency
 [[dependencies.unwanted]]
     modId="minecraft"

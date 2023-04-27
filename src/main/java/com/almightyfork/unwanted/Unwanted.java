@@ -1,8 +1,13 @@
 package com.almightyfork.unwanted;
 
 import com.almightyfork.unwanted.block.ModBlocks;
+import com.almightyfork.unwanted.block.entity.ModBlockEntities;
 import com.almightyfork.unwanted.item.ModItems;
 import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
+import com.almightyfork.unwanted.recipe.ModRecipes;
+import com.almightyfork.unwanted.screen.GemCuttingStationScreen;
+import com.almightyfork.unwanted.screen.ModMenuTypes;
+import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.worldgen.ModConfiguredFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -33,6 +38,10 @@ public class Unwanted
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -60,6 +69,8 @@ public class Unwanted
             event.accept(ModItems.MARBLE_SHARD);
             event.accept(ModItems.BLAZING_WATER);
             event.accept(ModItems.PURE_BLAZE_POWDER);
+            event.accept(ModItems.DARKNESS_MUSIC_DISK);
+            event.accept(ModItems.CAVE_WHISPERS_MUSIC_DISK);
         }
 
         if(event.getTab() == ModCreativeModeTabs.BLOCKS_TAB) {
@@ -110,6 +121,7 @@ public class Unwanted
             event.accept(ModBlocks.WHITE_BOUNCER_BLOCK);
             event.accept(ModBlocks.SPEEDER_BLOCK);
             event.accept(ModBlocks.EMBARIUM_LAMP_BLOCK);
+            event.accept(ModBlocks.GEM_CUTTING_STATION);
         }
 
         if(event.getTab() == ModCreativeModeTabs.SLABS_TAB) {
@@ -157,6 +169,7 @@ public class Unwanted
             event.accept(ModItems.TORRID_EMBARIUM_AXE);
             event.accept(ModItems.TORRID_EMBARIUM_SHOVEL);
             event.accept(ModItems.TORRID_EMBARIUM_HOE);
+            event.accept(ModItems.RUBY_DETECTOR);
         }
 
         if(event.getTab() == ModCreativeModeTabs.COMBAT_TAB) {
@@ -198,7 +211,7 @@ public class Unwanted
 //
 //        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
 //
-//        MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
+        MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
 //        MenuScreens.register(ModMenuTypes.GEM_INFUSER_MENU.get(), GemInfuserScreen::new);
 //        MenuScreens.register(ModMenuTypes.TORRID_FURNACE_MENU.get(), TorridFurnaceScreen::new);
 //

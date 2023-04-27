@@ -1,5 +1,6 @@
-package com.almightyfork.unwanted.item;
+package com.almightyfork.unwanted.item.armor;
 
+import com.almightyfork.unwanted.item.ModItems;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
