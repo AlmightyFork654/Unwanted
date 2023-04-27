@@ -182,14 +182,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOSSY_MARBLE_BRICKS_WALL = registerBlock("mossy_marble_bricks_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
-// nature
-//
-//    public static final RegistryObject<Block> TORRID_BUSH = BLOCKS.register("torrid_bush",
-//            () -> new NetherFlowerBlock(MobEffects.FIRE_RESISTANCE,15 ,BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS).noOcclusion()));
-//
-//    public static final RegistryObject<Block> POTTED_TORRID_BUSH = registerBlockWithoutBlockItem("potted_torrid_bush",
-//            () -> new FlowerPotBlock(() -> (FlowerPotBlock)Blocks.FLOWER_POT, ModBlocks.TORRID_BUSH, BlockBehaviour.Properties.copy(Blocks.POTTED_WARPED_FUNGUS).noOcclusion()));
-//
+ //nature
+
+    public static final RegistryObject<Block> TORRID_BUSH = registerBlock("torrid_bush",
+            () -> new NetherFlowerBlock(MobEffects.FIRE_RESISTANCE,15 ,BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS).noOcclusion()));
+
+    public static final RegistryObject<Block> POTTED_TORRID_BUSH = registerBlockWithoutBlockItem("potted_torrid_bush",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock)Blocks.FLOWER_POT, ModBlocks.TORRID_BUSH, BlockBehaviour.Properties.copy(Blocks.POTTED_WARPED_FUNGUS).noOcclusion()));
+
     //tree
 
     public static final RegistryObject<Block> EBONY_LOG = registerBlock("ebony_log",

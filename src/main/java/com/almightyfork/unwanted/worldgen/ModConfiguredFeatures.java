@@ -4,6 +4,7 @@ import com.almightyfork.unwanted.Unwanted;
 import com.almightyfork.unwanted.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -11,9 +12,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
@@ -33,6 +32,9 @@ import java.util.List;
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
+
+//    public static final ResourceKey<ConfiguredFeature<?, ?>> TORRID_KEY = registerKey("ebony");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMBARIUM_ORE_KEY = registerKey("embarium");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TORRID_ORE_KEY = registerKey("torrid");
@@ -60,6 +62,10 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.EBONY_LEAVES.get()),
                 new DarkOakFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1)),
                 new TwoLayersFeatureSize(1, 0, 3)).build());
+
+//        register(context, TORRID_KEY, Feature.FLOWER, new RandomPatchConfiguration(
+//                32, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+//                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.TORRID_BUSH.get())))));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

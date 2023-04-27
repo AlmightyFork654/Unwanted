@@ -12,15 +12,16 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> EBONY_PLACED_KEY = createKey("ebony_placed");
+
+//    public static final ResourceKey<PlacedFeature> TORRID_BUSH_PLACED_KEY = createKey("torrid_bush_placed");
+
 
     public static final ResourceKey<PlacedFeature> RUBY_PLACED_KEY = createKey("ruby_placed");
     public static final ResourceKey<PlacedFeature> EMBARIUM_PLACED_KEY = createKey("embarium_placed");
@@ -33,6 +34,9 @@ public class ModPlacedFeatures {
         register(context, EBONY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EBONY_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.2f, 4),
                         ModBlocks.EBONY_SAPLING.get()));
+
+//        register(context, TORRID_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TORRID_KEY),
+//                List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
         register(context, EMBARIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EMBARIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement( 12, //veins per chunk

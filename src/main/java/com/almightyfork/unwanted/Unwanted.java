@@ -3,7 +3,10 @@ package com.almightyfork.unwanted;
 import com.almightyfork.unwanted.block.ModBlocks;
 import com.almightyfork.unwanted.block.entity.ModBlockEntities;
 import com.almightyfork.unwanted.item.ModItems;
+import com.almightyfork.unwanted.misc.EPBrewingRecipe;
 import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
+import com.almightyfork.unwanted.potion.ModPotions;
+import com.almightyfork.unwanted.potion.effect.ModEffects;
 import com.almightyfork.unwanted.recipe.ModRecipes;
 import com.almightyfork.unwanted.screen.GemCuttingStationScreen;
 import com.almightyfork.unwanted.screen.ModMenuTypes;
@@ -14,9 +17,16 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -42,16 +52,29 @@ public class Unwanted
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
-
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::clientSetup);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.TORRID_BUSH.getId(), ModBlocks.POTTED_TORRID_BUSH);
 
+            BrewingRecipeRegistry.addRecipe(new EPBrewingRecipe(Potions.AWKWARD,
+                    ModItems.TORRID_STEEL_POWDER.get(), ModPotions.ENERGY_POTION.get()));
+
+//            ModVillagers.registerPOI();
+//
+//            SpawnPlacements.register(ModEntityTypes.GOBLIN_WARRIOR.get(),
+//                    SpawnPlacements.Type.ON_GROUND,
+//                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+//                    Mob::checkMobSpawnRules);
+        });
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
@@ -102,6 +125,7 @@ public class Unwanted
             event.accept(ModBlocks.EBONY_PLANKS);
             event.accept(ModBlocks.EBONY_LEAVES);
             event.accept(ModBlocks.EBONY_SAPLING);
+            event.accept(ModBlocks.TORRID_BUSH);
 
             event.accept(ModBlocks.RED_BOUNCER_BLOCK);
             event.accept(ModBlocks.ORANGE_BOUNCER_BLOCK);
@@ -202,15 +226,15 @@ public class Unwanted
 //        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_TRAPDOOR.get(), RenderType.translucent());
 //
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EMBARIUM_BLOCK.get(), RenderType.translucent());
-//
-//        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_BUSH.get(), RenderType.cutout());
-//        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_TORRID_BUSH.get(), RenderType.cutout());
-//
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_BUSH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_TORRID_BUSH.get(), RenderType.cutout());
+
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_SAPLING.get(), RenderType.cutout());
-//
-//        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
-//
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
+
         MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
 //        MenuScreens.register(ModMenuTypes.GEM_INFUSER_MENU.get(), GemInfuserScreen::new);
 //        MenuScreens.register(ModMenuTypes.TORRID_FURNACE_MENU.get(), TorridFurnaceScreen::new);
