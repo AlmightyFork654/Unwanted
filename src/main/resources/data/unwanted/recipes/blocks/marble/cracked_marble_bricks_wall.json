@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "unwanted:cracked_marble_bricks"
+        }
+    },
+    "result": {
+        "item": "unwanted:cracked_marble_bricks_wall",
+        "count": 6
+    }
+}

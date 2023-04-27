@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "unwanted:torrid_steel_powder"
+        },
+        {
+            "item": "unwanted:torrid_steel_powder"
+        },
+        {
+            "item": "unwanted:torrid_steel_powder"
+        },
+        {
+            "item": "unwanted:torrid_steel_powder"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        }
+    ],
+    "result": {
+        "item": "unwanted:pure_blaze_powder",
+        "count": 4
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "unwanted:torrid_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "unwanted:torrid_steel_bars",
+    "count": 16
+  }
+}

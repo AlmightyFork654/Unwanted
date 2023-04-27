@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unwanted:mossy_marble_bricks_slab"
+    },
+    {
+      "item": "unwanted:mossy_marble_bricks_slab"
+    }
+  ],
+  "result": {
+    "item": "unwanted:mossy_marble_bricks",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "DVD",
+        "DDD"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:slime_block"
+        },
+        "D": {
+            "item": "unwanted:smooth_marble"
+        },
+        "V": {
+            "item": "unwanted:embarium"
+        }
+    },
+    "result": {
+        "item": "unwanted:speeder_block",
+        "count": 3
+    }
+}

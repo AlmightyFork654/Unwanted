@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "unwanted:torrid_steel_nugget"
+        }
+    },
+    "result": {
+        "item": "unwanted:torrid_steel_powder",
+        "count": 1
+    }
+}

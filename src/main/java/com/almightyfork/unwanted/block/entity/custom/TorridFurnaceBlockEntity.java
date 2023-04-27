@@ -91,7 +91,7 @@ public class TorridFurnaceBlockEntity extends BlockEntity implements MenuProvide
         return new TorridFurnaceMenu(pContainerId, pInventory, this, this.data);
 
     }
-    @Deprecated
+
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
@@ -179,11 +179,11 @@ public class TorridFurnaceBlockEntity extends BlockEntity implements MenuProvide
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().output)
-                && hasFuelInFuelSlot(entity);
+                && (hasFuelInFuelSlot(entity) || isConsumingFuel(entity));
     }
 
     private static boolean hasFuelInFuelSlot(TorridFurnaceBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(0).is(CustomTags.Items.FUELS);
+        return entity.itemHandler.getStackInSlot(0).is(CustomTags.Items.ALL_FUELS);
     }
 
     private static boolean isConsumingFuel (TorridFurnaceBlockEntity entity) {

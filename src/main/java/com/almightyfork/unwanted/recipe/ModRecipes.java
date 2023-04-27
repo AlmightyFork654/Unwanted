@@ -16,9 +16,9 @@ public class ModRecipes {
 
 //    public static final RegistryObject<RecipeSerializer<GemInfuserRecipe>> GEM_INFUSER_SERIALIZER =
 //            SERIALIZERS.register("gem_infuser", () -> GemInfuserRecipe.Serializer.INSTANCE);
-//
-//    public static final RegistryObject<RecipeSerializer<TorridFurnaceRecipe>> TORRID_FURNACE_SERIALIZER =
-//            SERIALIZERS.register("torrid_furnace", () -> TorridFurnaceRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<TorridFurnaceRecipe>> TORRID_FURNACE_SERIALIZER =
+            SERIALIZERS.register("torrid_furnace", () -> TorridFurnaceRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

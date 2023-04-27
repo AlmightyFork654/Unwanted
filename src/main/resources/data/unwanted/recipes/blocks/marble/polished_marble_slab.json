@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "unwanted:polished_marble"
+        }
+    },
+    "result": {
+        "item": "unwanted:polished_marble_slab",
+        "count": 6
+    }
+}

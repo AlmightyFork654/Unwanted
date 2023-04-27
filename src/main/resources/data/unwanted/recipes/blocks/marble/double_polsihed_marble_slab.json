@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unwanted:polished_marble_slab"
+    },
+    {
+      "item": "unwanted:polished_marble_slab"
+    }
+  ],
+  "result": {
+    "item": "unwanted:double_polished_marble_slab",
+    "count": 1
+  }
+}

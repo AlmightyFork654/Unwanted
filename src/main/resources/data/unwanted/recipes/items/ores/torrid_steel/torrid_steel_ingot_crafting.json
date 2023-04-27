@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ddd",
+        "ddd",
+        "ddd"
+    ],
+    "key": {
+        "d": {
+            "item": "unwanted:torrid_steel_nugget"
+        }
+    },
+    "result": {
+        "item": "unwanted:torrid_steel_ingot",
+        "count": 1
+    }
+}

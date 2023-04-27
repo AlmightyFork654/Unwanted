@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unwanted:embarium_block"
+    }
+  ],
+  "result": {
+    "item": "unwanted:embarium",
+    "count": 9
+  }
+}

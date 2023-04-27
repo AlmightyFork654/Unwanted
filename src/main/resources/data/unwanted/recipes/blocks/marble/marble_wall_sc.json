@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "unwanted:marble"
+    },
+    "result": "unwanted:marble_wall",
+    "count": 1
+}

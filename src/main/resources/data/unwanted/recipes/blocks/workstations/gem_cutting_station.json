@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "cGc",
+        "___",
+        "OOO"
+    ],
+    "key": {
+        "c": {
+            "item": "minecraft:copper_ingot"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "_": {
+            "item": "minecraft:polished_deepslate_slab"
+        },
+        "O": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "result": {
+        "item": "unwanted:gem_cutting_station",
+        "count": 1
+    }
+}

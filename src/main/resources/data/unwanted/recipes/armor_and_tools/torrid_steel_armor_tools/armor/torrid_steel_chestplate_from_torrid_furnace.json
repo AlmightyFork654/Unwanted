@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:torrid_furnace",
+  "ingredients": [
+    {
+      "item": "unwanted:torrid_steel_ingot"
+    },
+    {
+      "item": "minecraft:iron_chestplate"
+    }
+  ],
+  "output": {
+    "item": "unwanted:torrid_steel_chestplate"
+  }
+}

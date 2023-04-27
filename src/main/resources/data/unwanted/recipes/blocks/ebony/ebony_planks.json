@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "unwanted:ebony_logs"
+    }
+  ],
+  "result": {
+    "item": "unwanted:ebony_planks",
+    "count": 4
+  }
+}

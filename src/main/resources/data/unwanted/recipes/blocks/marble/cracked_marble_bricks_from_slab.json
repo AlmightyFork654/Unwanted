@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unwanted:cracked_marble_bricks_slab"
+    },
+    {
+      "item": "unwanted:cracked_marble_bricks_slab"
+    }
+  ],
+  "result": {
+    "item": "unwanted:cracked_marble_bricks",
+    "count": 1
+  }
+}
