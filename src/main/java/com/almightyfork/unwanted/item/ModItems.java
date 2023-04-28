@@ -1,10 +1,12 @@
 package com.almightyfork.unwanted.item;
 
 import com.almightyfork.unwanted.Unwanted;
+import com.almightyfork.unwanted.block.ModBlocks;
 import com.almightyfork.unwanted.item.armor.FireArmorItem;
 import com.almightyfork.unwanted.item.armor.ModArmorMaterials;
 import com.almightyfork.unwanted.item.armor.ModTiers;
 import com.almightyfork.unwanted.item.armor.SuperArmorItem;
+import com.almightyfork.unwanted.item.custom.GemInfuserItem;
 import com.almightyfork.unwanted.item.custom.ModDiskItem;
 import com.almightyfork.unwanted.item.custom.PureBlazePowderItem;
 import com.almightyfork.unwanted.item.tools.*;
@@ -56,6 +58,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> BLAZING_WATER = ITEMS.register("blazing_water",
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
+
+    public static final RegistryObject<Item> GEM_INFUSER_ITEM = ITEMS.register("gem_infuser",
+            () -> new GemInfuserItem(ModBlocks.GEM_INFUSER.get(), new Item.Properties()));
 
     //music
 

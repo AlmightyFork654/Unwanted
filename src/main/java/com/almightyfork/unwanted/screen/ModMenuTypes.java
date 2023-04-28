@@ -17,8 +17,8 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<GemCuttingStationMenu>> GEM_CUTTING_STATION_MENU =
             registerMenuType(GemCuttingStationMenu::new, "gem_cutting_station_menu");
 
-//    public static final RegistryObject<MenuType<GemInfuserMenu>> GEM_INFUSER_MENU =
-//            registerMenuType(GemInfuserMenu::new, "gem_infuser_menu");
+    public static final RegistryObject<MenuType<GemInfuserMenu>> GEM_INFUSER_MENU =
+            registerMenuType(GemInfuserMenu::new, "gem_infuser_menu");
 
     public static final RegistryObject<MenuType<TorridFurnaceMenu>> TORRID_FURNACE_MENU =
             registerMenuType(TorridFurnaceMenu::new, "torrid_furnace_menu");

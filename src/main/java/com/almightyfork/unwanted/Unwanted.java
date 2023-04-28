@@ -2,6 +2,7 @@ package com.almightyfork.unwanted;
 
 import com.almightyfork.unwanted.block.ModBlocks;
 import com.almightyfork.unwanted.block.entity.ModBlockEntities;
+import com.almightyfork.unwanted.block.entity.client.GemInfuserBlockRenderer;
 import com.almightyfork.unwanted.item.ModItems;
 import com.almightyfork.unwanted.misc.EPBrewingRecipe;
 import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
@@ -9,6 +10,7 @@ import com.almightyfork.unwanted.potion.ModPotions;
 import com.almightyfork.unwanted.potion.effect.ModEffects;
 import com.almightyfork.unwanted.recipe.ModRecipes;
 import com.almightyfork.unwanted.screen.GemCuttingStationScreen;
+import com.almightyfork.unwanted.screen.GemInfuserScreen;
 import com.almightyfork.unwanted.screen.ModMenuTypes;
 import com.almightyfork.unwanted.screen.TorridFurnaceScreen;
 import com.almightyfork.unwanted.sound.ModSounds;
@@ -17,6 +19,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -36,6 +39,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 @Mod(Unwanted.MODID)
 public class Unwanted
@@ -55,6 +59,8 @@ public class Unwanted
         ModRecipes.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+
+        GeckoLib.initialize();
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -147,6 +153,7 @@ public class Unwanted
             event.accept(ModBlocks.SPEEDER_BLOCK);
             event.accept(ModBlocks.EMBARIUM_LAMP_BLOCK);
             event.accept(ModBlocks.GEM_CUTTING_STATION);
+            event.accept(ModBlocks.GEM_INFUSER);
             event.accept(ModBlocks.TORRID_FURNACE);
         }
 
@@ -238,7 +245,7 @@ public class Unwanted
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
 
         MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
-//        MenuScreens.register(ModMenuTypes.GEM_INFUSER_MENU.get(), GemInfuserScreen::new);
+        MenuScreens.register(ModMenuTypes.GEM_INFUSER_MENU.get(), GemInfuserScreen::new);
         MenuScreens.register(ModMenuTypes.TORRID_FURNACE_MENU.get(), TorridFurnaceScreen::new);
 
 //        EntityRenderers.register(ModEntityTypes.GOBLIN_WARRIOR.get(), GoblinWarriorRenderer::new);
@@ -250,7 +257,7 @@ public class Unwanted
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            BlockEntityRenderers.register(ModBlockEntities.GEM_INFUSER_BLOCK_ENTITY.get(), GemInfuserBlockRenderer::new);
         }
     }
 }

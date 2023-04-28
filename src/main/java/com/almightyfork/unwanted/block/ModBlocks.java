@@ -71,6 +71,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> GEM_CUTTING_STATION = registerBlock("gem_cutting_station",
             () -> new GemCuttingStationBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
 
+    public static final RegistryObject<Block> GEM_INFUSER = BLOCKS.register("gem_infuser",
+            ()-> new GemInfuserBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
+
     public static final RegistryObject<Block> TORRID_FURNACE = registerBlock("torrid_furnace",
             () -> new TorridFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
 

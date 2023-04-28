@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " i ",
+        "RiR",
+        "PPP"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "P": {
+            "item": "minecraft:polished_blackstone"
+        }
+    },
+    "result": {
+        "item": "darkssurvival:gem_infuser",
+        "count": 1
+    }
+}
