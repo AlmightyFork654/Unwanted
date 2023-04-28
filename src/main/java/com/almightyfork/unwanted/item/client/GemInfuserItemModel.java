@@ -1,7 +1,6 @@
 package com.almightyfork.unwanted.item.client;
 
 import com.almightyfork.unwanted.Unwanted;
-import com.almightyfork.unwanted.block.entity.custom.GemInfuserBlockEntity;
 import com.almightyfork.unwanted.item.custom.GemInfuserItem;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;

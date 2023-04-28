@@ -90,7 +90,6 @@ public class GemInfuserBlockEntity extends BlockEntity implements MenuProvider, 
         return new GemInfuserMenu(pContainerId, pInventory, this, this.data);
 
     }
-    @Deprecated
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
@@ -161,7 +160,7 @@ public class GemInfuserBlockEntity extends BlockEntity implements MenuProvider, 
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().output)
-                && hasWaterInWaterSlot(entity) /*&& hasGemInGemSlot(entity)*/;
+                && hasWaterInWaterSlot(entity);
     }
 
     private static boolean hasWaterInWaterSlot(GemInfuserBlockEntity entity) {
@@ -218,30 +217,19 @@ public class GemInfuserBlockEntity extends BlockEntity implements MenuProvider, 
         return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 
-//    @Override
-//    public void registerControllers(AnimationData data) {
-//        data.addAnimationController(new AnimationController<GemInfuserBlockEntity>
-//                (this, "controller", 0, this::predicate));
-//    }
-//
-//    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-//            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gem_infuser.use", true));
-//            return PlayState.CONTINUE;
-//    }
-//
-//    @Override
-//    public AnimationFactory getFactory() {
-//        return this.factory;
-//    }
-
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.gem_infuser.use", Animation.LoopType.LOOP));
-        return PlayState.CONTINUE;
+        if(isCrafting()) {
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.gem_infuser.use", Animation.LoopType.LOOP));
+            return PlayState.CONTINUE;
+        }
+        else {
+            return PlayState.STOP;
+        }
     }
 
     @Override
