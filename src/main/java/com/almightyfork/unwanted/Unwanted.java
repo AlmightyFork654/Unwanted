@@ -14,6 +14,7 @@ import com.almightyfork.unwanted.screen.GemInfuserScreen;
 import com.almightyfork.unwanted.screen.ModMenuTypes;
 import com.almightyfork.unwanted.screen.TorridFurnaceScreen;
 import com.almightyfork.unwanted.sound.ModSounds;
+import com.almightyfork.unwanted.villager.ModVillagers;
 import com.almightyfork.unwanted.worldgen.ModConfiguredFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -53,10 +54,11 @@ public class Unwanted
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModSounds.register(modEventBus);
+        ModVillagers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
 
@@ -75,8 +77,8 @@ public class Unwanted
             BrewingRecipeRegistry.addRecipe(new EPBrewingRecipe(Potions.AWKWARD,
                     ModItems.TORRID_STEEL_POWDER.get(), ModPotions.ENERGY_POTION.get()));
 
-//            ModVillagers.registerPOI();
-//
+            ModVillagers.registerPOI();
+
 //            SpawnPlacements.register(ModEntityTypes.GOBLIN_WARRIOR.get(),
 //                    SpawnPlacements.Type.ON_GROUND,
 //                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
