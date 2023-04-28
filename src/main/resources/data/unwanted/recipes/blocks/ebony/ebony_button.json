@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "unwanted:ebony_planks"
+    }
+  ],
+  "result": {
+    "item": "unwanted:ebony_button"
+  }
+}

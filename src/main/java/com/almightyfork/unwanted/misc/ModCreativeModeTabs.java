@@ -21,6 +21,7 @@ public class ModCreativeModeTabs {
     public static CreativeModeTab WALLS_TAB;
     public static CreativeModeTab TOOLS_TAB;
     public static CreativeModeTab COMBAT_TAB;
+    public static CreativeModeTab REDSTONE_TAB;
 
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
@@ -51,5 +52,9 @@ public class ModCreativeModeTabs {
         COMBAT_TAB = event.registerCreativeModeTab(new ResourceLocation(Unwanted.MODID, "combat_tab"),
                 builder -> builder.icon(() -> new ItemStack(ModItems.TORRID_EMBARIUM_CHESTPLATE.get()))
                         .title(Component.translatable("itemGroup.CombatTab")));
+
+        REDSTONE_TAB = event.registerCreativeModeTab(new ResourceLocation(Unwanted.MODID, "redstone_tab"),
+                builder -> builder.icon(() -> new ItemStack(ModBlocks.EBONY_DOOR.get()))
+                        .title(Component.translatable("itemGroup.RedstoneTab")));
     }
 }

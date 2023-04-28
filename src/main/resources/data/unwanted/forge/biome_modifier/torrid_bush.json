@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_nether",
+  "features": "unwanted:torrid_bush_placed",
+  "step": "vegetal_decoration"
+}

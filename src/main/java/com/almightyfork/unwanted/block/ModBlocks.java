@@ -15,6 +15,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -189,7 +191,49 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOSSY_MARBLE_BRICKS_WALL = registerBlock("mossy_marble_bricks_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
- //nature
+        // non-blocks
+
+    //doors
+
+    public static final RegistryObject<Block> TORRID_STEEL_DOOR = registerBlock("torrid_steel_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.METAL, TORRID_STEEL_BLOCK.get().defaultMaterialColor()).sound(SoundType.METAL)
+                    .strength(5F, 6F).destroyTime(32).noOcclusion(), BlockSetType.IRON));
+
+    public static final RegistryObject<Block> TORRID_STEEL_BARS_DOOR = registerBlock("torrid_steel_bars_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, TORRID_STEEL_BARS.get().defaultMaterialColor()).sound(SoundType.METAL)
+                    .strength(5F, 6F).destroyTime(16).noOcclusion(), BlockSetType.IRON));
+
+    //trapdoors
+
+    public static final RegistryObject<Block> TORRID_STEEL_TRAPDOOR = registerBlock("torrid_steel_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL, TORRID_STEEL_BLOCK.get().defaultMaterialColor()).sound(SoundType.METAL)
+                    .strength(5F, 6F).destroyTime(32).noOcclusion(), BlockSetType.IRON));
+
+    public static final RegistryObject<Block> TORRID_STEEL_BARS_TRAPDOOR = registerBlock("torrid_steel_bars_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, TORRID_STEEL_BARS.get().defaultMaterialColor()).sound(SoundType.METAL)
+                    .strength(5F, 6F).destroyTime(16).noOcclusion(), BlockSetType.IRON));
+
+    //buttons
+
+    public static final RegistryObject<Block> TORRID_STEEL_BUTTON = registerBlock("torrid_steel_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.METAL)
+                    .strength(5F, 6F).destroyTime(4).noCollission(), BlockSetType.IRON, 40, false));
+
+    public static final RegistryObject<Block> MARBLE_BUTTON = registerBlock("marble_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE)
+                    .strength(1.5F, 3F).destroyTime(2).noCollission(), BlockSetType.STONE, 30, false));
+
+    //pressure plates
+
+    public static final RegistryObject<Block> TORRID_STEEL_PRESSURE_PLATE = registerBlock("torrid_steel_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.METAL, TORRID_STEEL_BLOCK.get().defaultMaterialColor())
+                    .sound(SoundType.METAL).strength(5F, 6F).destroyTime(4), BlockSetType.IRON));
+
+    public static final RegistryObject<Block> MARBLE_PRESSURE_PLATE = registerBlock("marble_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.STONE, MARBLE.get().defaultMaterialColor())
+                    .sound(SoundType.STONE).strength(1.5F, 3F).destroyTime(2), BlockSetType.STONE));
+
+    //nature
 
     public static final RegistryObject<Block> TORRID_BUSH = registerBlock("torrid_bush",
             () -> new NetherFlowerBlock(MobEffects.FIRE_RESISTANCE,15 ,BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS).noOcclusion()));
@@ -259,6 +303,30 @@ public class ModBlocks {
     public static final RegistryObject<Block> EBONY_SLAB = registerBlock("ebony_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(1F, 2F)));
+
+//    FIR_SIGN = registerBlockNoBlockItem(() -> new StandingSignBlockBOP(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), BOPWoodTypes.FIR), "fir_sign");
+//    FIR_WALL_SIGN = registerBlockNoBlockItem(() -> new WallSignBlockBOP(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(FIR_SIGN), BOPWoodTypes.FIR), "fir_wall_sign");
+
+    public static final RegistryObject<Block> EBONY_FENCE = registerBlock("ebony_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+                    .strength(1F, 2F)));
+    public static final RegistryObject<Block> EBONY_FENCE_GATE = registerBlock("ebony_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+                    .strength(1F, 2F), WoodType.OAK));
+
+    public static final RegistryObject<Block> EBONY_BUTTON = registerBlock("ebony_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(1F, 2F).noCollission().destroyTime(2), BlockSetType.OAK, 20, true));
+    public static final RegistryObject<Block> EBONY_PRESSURE_PLATE = registerBlock("ebony_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+                    .strength(1F, 2F).destroyTime(2), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> EBONY_DOOR = registerBlock("ebony_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+                    .strength(1F, 2F).noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> EBONY_TRAPDOOR = registerBlock("ebony_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+                    .strength(1F, 2F).noOcclusion(), BlockSetType.OAK));
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {

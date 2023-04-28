@@ -15,6 +15,9 @@ public class CustomTags {
         public static final TagKey<Block> RUBY_DETECTOR_VALUABLES
                 = tag("ruby_detector_valuables");
 
+        public static final TagKey<Block> EBONY_LOGS
+                = tag("ebony_logs");
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Unwanted.MODID, name));
         }
