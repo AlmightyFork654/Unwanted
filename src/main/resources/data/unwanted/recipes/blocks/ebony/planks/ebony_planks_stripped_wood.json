@@ -3,11 +3,11 @@
   "group": "planks",
   "ingredients": [
     {
-      "tag": "minecraft:acacia_logs"
+      "item": "unwanted:stripped_ebony_wood"
     }
   ],
   "result": {
-    "item": "minecraft:acacia_planks",
+    "item": "unwanted:ebony_planks",
     "count": 4
   }
 }

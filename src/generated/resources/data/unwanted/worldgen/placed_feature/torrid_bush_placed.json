@@ -2,15 +2,8 @@
   "feature": "unwanted:torrid_bush",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
-    },
-    {
-      "type": "minecraft:in_square"
-    },
-    {
-      "type": "minecraft:heightmap",
-      "heightmap": "MOTION_BLOCKING"
+      "type": "minecraft:count_on_every_layer",
+      "count": 4
     },
     {
       "type": "minecraft:biome"

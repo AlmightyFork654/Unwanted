@@ -295,6 +295,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
             () -> new SaplingBlock(new EbonyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> POTTED_EBONY_SAPLING = registerBlockWithoutBlockItem("potted_ebony_sapling",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock)Blocks.FLOWER_POT, ModBlocks.EBONY_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+
+
 //    ebony non-blocks
 
     public static final RegistryObject<Block> EBONY_STAIRS = registerBlock("ebony_stairs",

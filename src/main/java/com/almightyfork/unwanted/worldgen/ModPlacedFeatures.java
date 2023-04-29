@@ -22,7 +22,6 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> TORRID_BUSH_PLACED_KEY = createKey("torrid_bush_placed");
 
-
     public static final ResourceKey<PlacedFeature> RUBY_PLACED_KEY = createKey("ruby_placed");
     public static final ResourceKey<PlacedFeature> EMBARIUM_PLACED_KEY = createKey("embarium_placed");
     public static final ResourceKey<PlacedFeature> TORRID_PLACED_KEY = createKey("torrid_placed");
@@ -36,7 +35,7 @@ public class ModPlacedFeatures {
                         ModBlocks.EBONY_SAPLING.get()));
 
         register(context, TORRID_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TORRID_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+                List.of(CountOnEveryLayerPlacement.of(4), BiomeFilter.biome()));
 
         register(context, EMBARIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EMBARIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement( 12, //veins per chunk

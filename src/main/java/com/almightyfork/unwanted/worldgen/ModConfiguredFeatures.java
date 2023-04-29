@@ -63,9 +63,10 @@ public class ModConfiguredFeatures {
                 new DarkOakFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1)),
                 new TwoLayersFeatureSize(1, 0, 3)).build());
 
-        register(context, TORRID_KEY, Feature.FLOWER, new RandomPatchConfiguration(
-                32, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+        register(context, TORRID_KEY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(
+                8, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.TORRID_BUSH.get())))));
+
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

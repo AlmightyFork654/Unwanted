@@ -3,7 +3,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "tag": "unwanted:ebony_logs"
+      "item": "unwanted:ebony_stripped_wood"
     }
   ],
   "result": {
