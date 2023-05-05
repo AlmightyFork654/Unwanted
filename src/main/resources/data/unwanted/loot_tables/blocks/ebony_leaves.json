@@ -38,7 +38,7 @@
                   ]
                 }
               ],
-              "name": "minecraft:ebony_leaves"
+              "name": "unwanted:ebony_leaves"
             },
             {
               "type": "minecraft:item",
@@ -57,7 +57,7 @@
                   ]
                 }
               ],
-              "name": "minecraft:ebony_sapling"
+              "name": "unwanted:ebony_sapling"
             }
           ]
         }

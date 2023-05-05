@@ -1,4 +1,4 @@
-package com.almightyfork.unwanted.item.tools;
+package com.almightyfork.unwanted.item.tools.sword;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

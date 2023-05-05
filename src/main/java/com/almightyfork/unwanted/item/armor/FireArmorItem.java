@@ -77,4 +77,3 @@ public class FireArmorItem extends ArmorItem {
                 leggings.getMaterial() == material && boots.getMaterial() == material;
     }
 }
-

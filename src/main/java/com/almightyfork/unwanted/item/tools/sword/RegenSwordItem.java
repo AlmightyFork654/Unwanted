@@ -1,4 +1,4 @@
-package com.almightyfork.unwanted.item.tools;
+package com.almightyfork.unwanted.item.tools.sword;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -14,7 +14,7 @@ public class RegenSwordItem extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pAttacker.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 4), pAttacker);
+        pAttacker.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 4, false, false), pAttacker);
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 }

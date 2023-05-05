@@ -133,9 +133,15 @@
 
   "item.unwanted.torrid_embarium_sword": "Torrid Steel Embarium Sword",
   "item.unwanted.torrid_embarium_pickaxe": "Torrid Steel Embarium Pickaxe",
-  "item.unwanted.torrid_embarium_axe": "Torrid Steel Axe",
+  "item.unwanted.torrid_embarium_axe": "Torrid Steel Embarium Axe",
   "item.unwanted.torrid_embarium_shovel": "Torrid Steel Embarium Shovel",
   "item.unwanted.torrid_embarium_hoe": "Torrid Steel Embarium Hoe",
+
+  "item.unwanted.profundium_sword": "Profundium Sword",
+  "item.unwanted.profundium_pickaxe": "Profundium Pickaxe",
+  "item.unwanted.profundium_axe": "Profundium Axe",
+  "item.unwanted.profundium_shovel": "Profundium Shovel",
+  "item.unwanted.profundium_hoe": "Profundium Hoe",
 
   "item.unwanted.embarium_helmet": "Embarium Helmet",
   "item.unwanted.embarium_chestplate": "Embarium Chestplate",
@@ -151,6 +157,15 @@
   "item.unwanted.torrid_embarium_chestplate": "Torrid Steel Embarium Chestplate",
   "item.unwanted.torrid_embarium_leggings": "Torrid Steel Embarium Leggings",
   "item.unwanted.torrid_embarium_boots": "Torrid Steel Embarium Boots",
+
+  "item.unwanted.profundium_helmet": "Profundium Helmet",
+  "item.unwanted.profundium_chestplate": "Profundium Chestplate",
+  "item.unwanted.profundium_leggings": "Profundium Leggings",
+  "item.unwanted.profundium_boots": "Profundium Boots",
+
+  "item.unwanted.profundium_flake": "Profundium Flake",
+  "item.unwanted.profundium_scrap": "Profundium Scrap",
+  "item.unwanted.profundium_ingot": "Profundium Ingot",
 
   "sounds.unwanted.detector_found_ore": "Detector Found Ore Sound",
   "item.unwanted.darkness_music_disc": "Music Disc",

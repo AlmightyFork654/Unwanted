@@ -5,7 +5,9 @@ import com.almightyfork.unwanted.block.entity.ModBlockEntities;
 import com.almightyfork.unwanted.block.entity.client.GemInfuserBlockRenderer;
 //import com.almightyfork.unwanted.event.JigsawHelper;
 //import com.almightyfork.unwanted.event.ModConfig;
+import com.almightyfork.unwanted.event.Layers;
 import com.almightyfork.unwanted.item.ModItems;
+import com.almightyfork.unwanted.item.armor.ProfundiumElytraLayer;
 import com.almightyfork.unwanted.misc.EPBrewingRecipe;
 import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
 import com.almightyfork.unwanted.potion.ModPotions;
@@ -17,15 +19,20 @@ import com.almightyfork.unwanted.screen.ModMenuTypes;
 import com.almightyfork.unwanted.screen.TorridFurnaceScreen;
 import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.villager.ModVillagers;
+import com.google.common.eventbus.Subscribe;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -65,6 +72,7 @@ public class Unwanted
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(Layers::registerLayers);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -89,6 +97,9 @@ public class Unwanted
             event.accept(ModItems.TORRID_STEEL_NUGGET);
             event.accept(ModItems.TORRID_STEEL_POWDER);
             event.accept(ModItems.EMBARIUM);
+            event.accept(ModItems.PROFUNDIUM_FLAKE);
+            event.accept(ModItems.PROFUNDIUM_SCRAP);
+            event.accept(ModItems.PROFUNDIUM_INGOT);
             event.accept(ModItems.CHISEL);
             event.accept(ModItems.NETHERITE_CHISEL);
             event.accept(ModItems.MARBLE_SHARD);
@@ -199,6 +210,11 @@ public class Unwanted
             event.accept(ModItems.TORRID_EMBARIUM_AXE);
             event.accept(ModItems.TORRID_EMBARIUM_SHOVEL);
             event.accept(ModItems.TORRID_EMBARIUM_HOE);
+            event.accept(ModItems.PROFUNDIUM_SWORD);
+            event.accept(ModItems.PROFUNDIUM_PICKAXE);
+            event.accept(ModItems.PROFUNDIUM_AXE);
+            event.accept(ModItems.PROFUNDIUM_SHOVEL);
+            event.accept(ModItems.PROFUNDIUM_HOE);
             event.accept(ModItems.RUBY_DETECTOR);
         }
 
@@ -215,6 +231,10 @@ public class Unwanted
             event.accept(ModItems.TORRID_EMBARIUM_CHESTPLATE);
             event.accept(ModItems.TORRID_EMBARIUM_LEGGINGS);
             event.accept(ModItems.TORRID_EMBARIUM_BOOTS);
+            event.accept(ModItems.PROFUNDIUM_HELMET);
+            event.accept(ModItems.PROFUNDIUM_CHESTPLATE);
+            event.accept(ModItems.PROFUNDIUM_LEGGINGS);
+            event.accept(ModItems.PROFUNDIUM_BOOTS);
         }
 
         if(event.getTab() == ModCreativeModeTabs.REDSTONE_TAB) {
@@ -233,7 +253,6 @@ public class Unwanted
         }
     }
 
-    @Deprecated
     private void clientSetup(final FMLClientSetupEvent event) {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_BARS.get(), RenderType.cutout());
@@ -269,6 +288,16 @@ public class Unwanted
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             BlockEntityRenderers.register(ModBlockEntities.GEM_INFUSER_BLOCK_ENTITY.get(), GemInfuserBlockRenderer::new);
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+    public static class ClientForgeEvents {
+        @SubscribeEvent
+        public static void renderPlayer(RenderPlayerEvent.Pre event)
+        {
+            PlayerRenderer renderer = event.getRenderer();
+            renderer.addLayer(new ProfundiumElytraLayer<>(renderer, Minecraft.getInstance().getEntityModels()));
         }
     }
 

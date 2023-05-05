@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
+
     EMBARIUM("embarium", 33, new int[]{1, 4, 5, 2}, 25, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.2F, () -> {
         return Ingredient.of(ModItems.EMBARIUM.get());
     }),
@@ -20,6 +21,9 @@ public enum ModArmorMaterials implements ArmorMaterial {
         return Ingredient.of(ModItems.TORRID_STEEL_INGOT.get());
     }),
     TORRID_EMBARIUM("torrid_embarium", 33, new int[]{2, 5, 6, 3}, 25, SoundEvents.ARMOR_EQUIP_IRON, 0.5F, 0.2F, () -> {
+        return Ingredient.of(ModItems.EMBARIUM.get());
+    }),
+    PROFUNDIUM("profundium", 33, new int[]{4, 7, 9, 4}, 25, SoundEvents.ARMOR_EQUIP_NETHERITE, 4F, 0.2F, () -> {
         return Ingredient.of(ModItems.EMBARIUM.get());
     });
 

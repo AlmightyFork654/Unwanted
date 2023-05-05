@@ -71,4 +71,3 @@ public class SuperArmorItem extends ArmorItem {
                 leggings.getMaterial() == material && boots.getMaterial() == material;
     }
 }
-

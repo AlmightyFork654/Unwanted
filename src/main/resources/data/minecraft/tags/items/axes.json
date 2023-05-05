@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "unwanted:embarium_axe",
+    "unwanted:torrid_steel_axe",
+    "unwanted:torrid_embarium_axe",
+    "unwanted:profundium_axe"
+  ]
+}
