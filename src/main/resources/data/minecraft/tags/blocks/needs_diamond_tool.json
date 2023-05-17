@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "unwanted:ruby_ore"
+    "unwanted:ruby_ore",
+    "unwanted:profundium_ore"
   ]
 }

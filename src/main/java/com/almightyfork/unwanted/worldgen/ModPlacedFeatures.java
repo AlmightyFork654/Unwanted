@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
@@ -25,6 +26,9 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> RUBY_PLACED_KEY = createKey("ruby_placed");
     public static final ResourceKey<PlacedFeature> EMBARIUM_PLACED_KEY = createKey("embarium_placed");
     public static final ResourceKey<PlacedFeature> TORRID_PLACED_KEY = createKey("torrid_placed");
+    public static final ResourceKey<PlacedFeature> PROFUNDIUM_PLACED_KEY = createKey("profundium_placed");
+
+    public static final ResourceKey<PlacedFeature> MARBLE_ORE_PLACED_KEY = createKey("marble_ore_placed");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -40,11 +44,18 @@ public class ModPlacedFeatures {
         register(context, EMBARIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EMBARIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement( 12, //veins per chunk
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(160)))); // spawn levels
+        register(context, PROFUNDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PROFUNDIUM_ORE_KEY),
+                ModOrePlacement.commonOrePlacement( 4, //veins per chunk
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-40)))); // spawn levels
         register(context, RUBY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_ORE_KEY),
                 ModOrePlacement.commonOrePlacement( 8, //veins per chunk
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(80)))); // spawn levels
         register(context, TORRID_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TORRID_ORE_KEY),
                 ModOrePlacement.commonOrePlacement( 24, //veins per chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(240)))); // spawn levels
+
+        register(context, MARBLE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MARBLE_ORE_KEY),
+                ModOrePlacement.commonOrePlacement( 5, //veins per chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(240)))); // spawn levels
 
     }

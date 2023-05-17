@@ -37,11 +37,11 @@ public class ModConfig {
                 .define("generateDesertHouses", true);
 
         COMMON_BUILDER.comment("House weights (spawn frequency)").push(CATEGORY_WEIGHTS);
-        ENCHANTER_HOUSE_WEIGHT = COMMON_BUILDER.comment("Enchanter house spawn chance").defineInRange("enchanterHouseWeight", 3, 1, Integer.MAX_VALUE);
-        COMMON_BUILDER.comment("House weights (spawn frequency)").push(CATEGORY_WEIGHTS);
-        MUSICIAN_HOUSE_WEIGHT = COMMON_BUILDER.comment("Musician house spawn chance").defineInRange("musicianHouseWeight", 20, 1, Integer.MAX_VALUE);
-        COMMON_BUILDER.comment("House weights (spawn frequency)").push(CATEGORY_WEIGHTS);
-        GEM_CUTTER_HOUSE_WEIGHT = COMMON_BUILDER.comment("Gem cutter house spawn chance").defineInRange("gemCutterHouseWeight", 3, 1, Integer.MAX_VALUE);
+        ENCHANTER_HOUSE_WEIGHT = COMMON_BUILDER.comment("Enchanter house spawn chance").defineInRange("enchanterHouseWeight", 10, 0, Integer.MAX_VALUE);
+        MUSICIAN_HOUSE_WEIGHT = COMMON_BUILDER.comment("Musician house spawn chance").defineInRange("musicianHouseWeight", 10, 0, Integer.MAX_VALUE);
+        GEM_CUTTER_HOUSE_WEIGHT = COMMON_BUILDER.comment("Gem cutter house spawn chance").defineInRange("gemCutterHouseWeight", 10, 0, Integer.MAX_VALUE);
+
+        COMMON_BUILDER.pop();
 
 
         COMMON_CONFIG = COMMON_BUILDER.build();

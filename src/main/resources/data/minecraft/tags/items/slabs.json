@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "unwanted:marble_slab",
+    "unwanted:smooth_marble_slab",
+    "unwanted:polished_marble_slab",
+    "unwanted:marble_bricks_slab",
+    "unwanted:cracked_marble_bricks_slab",
+    "unwanted:mossy_marble_bricks_slab"
+  ]
+}

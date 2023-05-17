@@ -6,6 +6,10 @@ import com.almightyfork.unwanted.block.entity.client.GemInfuserBlockRenderer;
 //import com.almightyfork.unwanted.event.JigsawHelper;
 //import com.almightyfork.unwanted.event.ModConfig;
 import com.almightyfork.unwanted.event.Layers;
+import com.almightyfork.unwanted.event.ModConfig;
+import com.almightyfork.unwanted.event.ModConfigHelper;
+import com.almightyfork.unwanted.event.ModEventClientBusEvents;
+import com.almightyfork.unwanted.event.jigsaw.JigsawHelper;
 import com.almightyfork.unwanted.item.ModItems;
 import com.almightyfork.unwanted.item.armor.ProfundiumElytraLayer;
 import com.almightyfork.unwanted.misc.EPBrewingRecipe;
@@ -19,7 +23,6 @@ import com.almightyfork.unwanted.screen.ModMenuTypes;
 import com.almightyfork.unwanted.screen.TorridFurnaceScreen;
 import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.villager.ModVillagers;
-import com.google.common.eventbus.Subscribe;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -27,10 +30,15 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -39,6 +47,7 @@ import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -56,6 +65,8 @@ public class Unwanted
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, ModConfig.COMMON_CONFIG);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
@@ -71,7 +82,6 @@ public class Unwanted
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(Layers::registerLayers);
     }
 
@@ -114,6 +124,7 @@ public class Unwanted
             event.accept(ModBlocks.TORRID_STEEL_ORE);
             event.accept(ModBlocks.EMBARIUM_ORE);
             event.accept(ModBlocks.DEEPSLATE_EMBARIUM_ORE);
+            event.accept(ModBlocks.PROFUNDIUM_ORE);
             event.accept(ModBlocks.RUBY_BLOCK);
             event.accept(ModBlocks.EMBARIUM_BLOCK);
             event.accept(ModBlocks.TORRID_STEEL_BLOCK);
@@ -253,34 +264,6 @@ public class Unwanted
         }
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_BARS.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_BARS_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_BARS_TRAPDOOR.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_DOOR.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_TRAPDOOR.get(), RenderType.translucent());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_DOOR.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_STEEL_TRAPDOOR.get(), RenderType.translucent());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EMBARIUM_BLOCK.get(), RenderType.translucent());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TORRID_BUSH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_TORRID_BUSH.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_LEAVES.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_EBONY_SAPLING.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
-
-        MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
-        MenuScreens.register(ModMenuTypes.GEM_INFUSER_MENU.get(), GemInfuserScreen::new);
-        MenuScreens.register(ModMenuTypes.TORRID_FURNACE_MENU.get(), TorridFurnaceScreen::new);
-    }
-
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
@@ -301,52 +284,55 @@ public class Unwanted
         }
     }
 
-//    @SubscribeEvent
-//    public void onServerAboutToStartEvent(ServerAboutToStartEvent event) {
+//    public static void registerJigsaws(MinecraftServer server) {
+//        Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
+//        Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
+//
+//        ResourceLocation plainsPoolLocation = new ResourceLocation("minecraft:village/plains/houses");
+//        ResourceLocation desertPoolLocation = new ResourceLocation("minecraft:village/desert/houses");
+//        ResourceLocation savannaPoolLocation = new ResourceLocation("minecraft:village/savanna/houses");
+//        ResourceLocation snowyPoolLocation = new ResourceLocation("minecraft:village/snowy/houses");
+//        ResourceLocation taigaPoolLocation = new ResourceLocation("minecraft:village/taiga/houses");
+//
 //        // PLAINS VILLAGE HOUSES
-//        if (ModConfig.GENERATE_PLAINS_HOUSES.get()) {
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/plains/houses"),
-//                    new ResourceLocation("unwanted:village/plains/plains_enchanter"), ModConfig.ENCHANTER_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/plains/houses"),
-//                    new ResourceLocation("unwanted:village/plains/plains_musician"), ModConfig.MUSICIAN_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/plains/houses"),
-//                    new ResourceLocation("unwanted:village/plains/plains_gem_cutter"), ModConfig.GEM_CUTTER_HOUSE_WEIGHT.get());
+//        if (ModConfigHelper.generatePlainsHouses()) {
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_enchanter", ModConfigHelper.enchanterHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_musician", ModConfigHelper.musicianHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
 //        }
+//
 //        // TAIGA VILLAGE HOUSES
-//        if (ModConfig.GENERATE_TAIGA_HOUSES.get()) {
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/taiga/houses"),
-//                    new ResourceLocation("unwanted:village/taiga/taiga_enchanter"), ModConfig.ENCHANTER_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/taiga/houses"),
-//                    new ResourceLocation("unwanted:village/taiga/taiga_musician"), ModConfig.MUSICIAN_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/taiga/houses"),
-//                    new ResourceLocation("unwanted:village/taiga/taiga_gem_cutter"), ModConfig.GEM_CUTTER_HOUSE_WEIGHT.get());
+//        if (ModConfigHelper.generateTaigaHouses()) {
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_enchanter", ModConfigHelper.enchanterHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_musician", ModConfigHelper.musicianHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
 //        }
+//
 //        // SAVANNA VILLAGE HOUSES
-//        if (ModConfig.GENERATE_SAVANNA_HOUSES.get()) {
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/savanna/houses"),
-//                    new ResourceLocation("unwanted:village/savanna/savanna_enchanter"), ModConfig.ENCHANTER_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/savanna/houses"),
-//                    new ResourceLocation("unwanted:village/savanna/savanna_musician"), ModConfig.MUSICIAN_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/savanna/houses"),
-//                    new ResourceLocation("unwanted:village/savanna/savanna_gem_cutter"), ModConfig.GEM_CUTTER_HOUSE_WEIGHT.get());
+//        if (ModConfigHelper.generateSavannaHouses()) {
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_enchanter", ModConfigHelper.enchanterHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_musician", ModConfigHelper.musicianHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
 //        }
+//
 //        // SNOWY VILLAGE HOUSES
-//        if (ModConfig.GENERATE_SNOWY_HOUSES.get()) {
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/snowy/houses"),
-//                    new ResourceLocation("unwanted:village/snowy/snowy_enchanter"), ModConfig.ENCHANTER_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/snowy/houses"),
-//                    new ResourceLocation("unwanted:village/snowy/snowy_musician"), ModConfig.MUSICIAN_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/snowy/houses"),
-//                    new ResourceLocation("unwanted:village/snowy/snowy_gem_cutter"), ModConfig.GEM_CUTTER_HOUSE_WEIGHT.get());
+//        if (ModConfigHelper.generateSnowyHouses()) {
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_enchanter", ModConfigHelper.enchanterHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_musician", ModConfigHelper.musicianHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
 //        }
+//
 //        // DESERT VILLAGE HOUSES
-//        if (ModConfig.GENERATE_DESERT_HOUSES.get()) {
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/desert/houses"),
-//                    new ResourceLocation("unwanted:village/desert/desert_enchanter"), ModConfig.ENCHANTER_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/desert/houses"),
-//                    new ResourceLocation("unwanted:village/desert/desert_musician"), ModConfig.MUSICIAN_HOUSE_WEIGHT.get());
-//            JigsawHelper.registerJigsaw(event.getServer(), new ResourceLocation("minecraft:village/desert/houses"),
-//                    new ResourceLocation("unwanted:village/desert/desert_gem_cutter"), ModConfig.GEM_CUTTER_HOUSE_WEIGHT.get());
+//        if (ModConfigHelper.generateDesertHouses()) {
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_enchanter", ModConfigHelper.enchanterHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_musician", ModConfigHelper.musicianHouseWeight());
+//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
 //        }
 //    }
+
+    @SubscribeEvent
+    public void onServerAboutToStartEvent(ServerAboutToStartEvent event) {
+//        Unwanted.registerJigsaws(event.getServer());
+    }
+
 }

@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTes
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
@@ -38,6 +40,9 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMBARIUM_ORE_KEY = registerKey("embarium");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TORRID_ORE_KEY = registerKey("torrid");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PROFUNDIUM_ORE_KEY = registerKey("profundium");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MARBLE_ORE_KEY = registerKey("marble_ore");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -50,7 +55,12 @@ public class ModConfiguredFeatures {
                 ModBlocks.EMBARIUM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_EMBARIUM_ORE.get().defaultBlockState()));
 
+        List<OreConfiguration.TargetBlockState> ProfundiumOres = List.of(OreConfiguration.target(stoneReplaceables,
+                ModBlocks.PROFUNDIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.PROFUNDIUM_ORE.get().defaultBlockState()));
+
         register(context, EMBARIUM_ORE_KEY, Feature.ORE, new OreConfiguration(embariumOres, 6));
+        register(context, PROFUNDIUM_ORE_KEY, Feature.ORE, new OreConfiguration(ProfundiumOres, 3));
         register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables,
                 ModBlocks.RUBY_ORE.get().defaultBlockState(), 4));
         register(context, TORRID_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
@@ -66,6 +76,9 @@ public class ModConfiguredFeatures {
         register(context, TORRID_KEY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(
                 8, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.TORRID_BUSH.get())))));
+
+        register(context, MARBLE_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                ModBlocks.MARBLE.get().defaultBlockState(), 32));
 
     }
 

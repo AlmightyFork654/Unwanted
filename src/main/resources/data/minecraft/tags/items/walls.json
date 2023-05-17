@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "unwanted:marble_wall",
+    "unwanted:smooth_marble_wall",
+    "unwanted:polished_marble_wall",
+    "unwanted:marble_bricks_wall",
+    "unwanted:cracked_marble_bricks_wall",
+    "unwanted:mossy_marble_bricks_wall"
+  ]
+}

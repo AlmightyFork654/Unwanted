@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:torrid_furnace",
+  "ingredients": [
+    {
+      "item": "unwanted:profundium_ore"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    }
+  ],
+  "output": {
+    "item": "unwanted:profundium_flake"
+  }
+}

@@ -39,6 +39,7 @@
     "unwanted:torrid_steel_bars",
     "unwanted:embarium_block",
     "unwanted:embarium_ore",
-    "unwanted:deepslate_embarium_ore"
+    "unwanted:deepslate_embarium_ore",
+    "unwanted:profundium_ore"
   ]
 }

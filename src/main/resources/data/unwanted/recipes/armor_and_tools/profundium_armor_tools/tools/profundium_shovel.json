@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:torrid_furnace",
+  "ingredients": [
+    {
+      "item": "unwanted:profundium_ingot"
+    },
+    {
+      "item": "minecraft:netherite_shovel"
+    }
+  ],
+  "output": {
+    "item": "unwanted:profundium_shovel"
+  }
+}

@@ -59,13 +59,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> PROFUNDIUM_FLAKE = ITEMS.register("profundium_flake",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> PROFUNDIUM_SCRAP = ITEMS.register("profundium_scrap",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> PROFUNDIUM_INGOT = ITEMS.register("profundium_ingot",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> BLAZING_WATER = ITEMS.register("blazing_water",
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
