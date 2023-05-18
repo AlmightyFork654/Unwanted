@@ -70,8 +70,8 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.EBONY_LOG.get()),
                 new DarkOakTrunkPlacer(2, 4, 3),
                 BlockStateProvider.simple(ModBlocks.EBONY_LEAVES.get()),
-                new DarkOakFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1)),
-                new TwoLayersFeatureSize(1, 0, 3)).build());
+                new DarkOakFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1)),
+                new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, TORRID_KEY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(
                 8, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
