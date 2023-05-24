@@ -123,12 +123,13 @@ public class Unwanted
 
         if(event.getTab() == ModCreativeModeTabs.BLOCKS_TAB) {
             event.accept(ModBlocks.RUBY_ORE);
-            event.accept(ModBlocks.TORRID_STEEL_ORE);
             event.accept(ModBlocks.EMBARIUM_ORE);
             event.accept(ModBlocks.DEEPSLATE_EMBARIUM_ORE);
             event.accept(ModBlocks.PROFUNDIUM_ORE);
+            event.accept(ModBlocks.TORRID_STEEL_ORE);
             event.accept(ModBlocks.RUBY_BLOCK);
             event.accept(ModBlocks.EMBARIUM_BLOCK);
+            event.accept(ModBlocks.PROFUNDIUM_BLOCK);
             event.accept(ModBlocks.TORRID_STEEL_BLOCK);
             event.accept(ModBlocks.TORRID_STEEL_BARS);
 

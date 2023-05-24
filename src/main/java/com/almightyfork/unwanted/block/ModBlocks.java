@@ -67,6 +67,9 @@ public class ModBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(ModSounds.EMBARIUM_SOUNDS)
                     .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> 8)));
 
+    public static final RegistryObject<Block> PROFUNDIUM_BLOCK = registerBlock("profundium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(50F, 50F).destroyTime(10)));
+
     public static final RegistryObject<Block> EMBARIUM_LAMP_BLOCK = registerBlock("embarium_lamp_block",
             () -> new EmbariumLampBlock(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.AMETHYST_CLUSTER)
                     .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> blockState.getValue(EmbariumLampBlock.CLICKED) ? 15 : 0)));
