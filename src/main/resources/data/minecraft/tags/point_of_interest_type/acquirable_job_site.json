@@ -2,6 +2,7 @@
   "values": [
     "unwanted:jukebox",
     "unwanted:enchanting_table",
-    "unwanted:gem_cutting_station"
+    "unwanted:gem_cutting_station",
+    "unwanted:collecting_station"
   ]
 }

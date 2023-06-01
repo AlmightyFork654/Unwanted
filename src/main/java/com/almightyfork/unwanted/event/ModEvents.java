@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -378,6 +379,134 @@ public class ModEvents {
                     Totem,2,8,0.0F));
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(Items.TOTEM_OF_UNDYING, 1),
+                    Ruby,12,8,0.0F));
+
+            //temp
+        }
+        //Collector
+        //lv1
+        if(event.getType() == ModVillagers.COLLECTOR.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack mob_head1 = new ItemStack(Blocks.CREEPER_HEAD, 1);
+            ItemStack mob_head2 = new ItemStack(Blocks.ZOMBIE_HEAD, 1);
+            ItemStack mob_head3 = new ItemStack(Blocks.SKELETON_SKULL, 1);
+            ItemStack ruby = new ItemStack(ModItems.RUBY.get(), 15);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),18),
+                    mob_head1,6,6,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),18),
+                    mob_head2,6,6,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),18),
+                    mob_head3,6,6,0.1F));
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Blocks.CREEPER_HEAD,1),
+                    ruby,6,4,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Blocks.ZOMBIE_HEAD,1),
+                    ruby,6,4,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Blocks.SKELETON_SKULL,1),
+                    ruby,6,4,0.1F));
+        }
+        //lv2
+        if(event.getType() == ModVillagers.COLLECTOR.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack mob_head1 = new ItemStack(Blocks.PIGLIN_HEAD, 1);
+            ItemStack scute = new ItemStack(Items.SCUTE, 1);
+            ItemStack eyes = new ItemStack(Items.ENDER_EYE, 4);
+            ItemStack ruby = new ItemStack(ModItems.RUBY.get(), 15);
+            ItemStack ruby1 = new ItemStack(ModItems.RUBY.get(), 44);
+            ItemStack ruby2 = new ItemStack(ModItems.RUBY.get(), 58);
+            int villagerLevel = 2;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),18),
+                    mob_head1,6,6,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),12),
+                    scute,4,2,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),12),
+                    eyes,4,2,0.1F));
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Blocks.PIGLIN_HEAD,1),
+                    ruby,6,4,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Blocks.WITHER_SKELETON_SKULL,1),
+                    ruby1,6,4,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Blocks.DRAGON_HEAD,1),
+                    ruby2,6,4,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.GHAST_TEAR,8),
+                    ruby2,8,5,0.1F));
+        }
+        //lv3
+        if(event.getType() == ModVillagers.COLLECTOR.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack ruby = new ItemStack(ModItems.RUBY.get(), 16);
+            ItemStack ruby2 = new ItemStack(ModItems.RUBY.get(), 32);
+            ItemStack head = new ItemStack(Items.PLAYER_HEAD, 1);
+            int villagerLevel = 3;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.HEART_OF_THE_SEA,1),
+                    ruby,8,4,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.ECHO_SHARD,1),
+                    ruby,8,3,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBY.get(),20),
+                    head,4,6,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.ELYTRA,1),
+                    ruby2,8,5,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.ENCHANTED_BOOK,1),
+                    ruby,8,4,0.1F));
+
+        }
+        //lv4
+        if(event.getType() == ModVillagers.COLLECTOR.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack ruby = new ItemStack(ModItems.RUBY.get(), 54);
+            ItemStack ruby2 = new ItemStack(ModItems.RUBY.get(), 64);
+            ItemStack ruby3 = new ItemStack(ModItems.RUBY.get(), 18);
+            int villagerLevel = 4;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.NETHER_STAR,1),
+                    ruby,8,5,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.SHULKER_SHELL,1),
+                    ruby3,8,3,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.NAUTILUS_SHELL,1),
+                    ruby3,8,3,0.1F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.ENCHANTED_GOLDEN_APPLE,1),
+                    ruby2,8,5,0.1F));
+        }
+        //lv5
+        if(event.getType() == ModVillagers.COLLECTOR.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack Ruby = new ItemStack(ModItems.RUBY.get(), 64);
+            int villagerLevel = 5;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.TOTEM_OF_UNDYING, 1),
+                    Ruby,12,8,0.0F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.DRAGON_BREATH, 4),
+                    Ruby,12,8,0.0F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.PHANTOM_MEMBRANE, 4),
                     Ruby,12,8,0.0F));
 
             //temp

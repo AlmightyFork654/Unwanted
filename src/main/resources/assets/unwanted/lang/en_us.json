@@ -201,6 +201,7 @@
 
   "entity.minecraft.villager.unwanted.enchanter": "Enchanter",
   "entity.minecraft.villager.unwanted.musician": "Musician",
-  "entity.minecraft.villager.unwanted.musician": "Gem Cutter"
+  "entity.minecraft.villager.unwanted.gem_cutter": "Gem Cutter",
+  "entity.minecraft.villager.unwanted.collector": "Collector"
 
 }

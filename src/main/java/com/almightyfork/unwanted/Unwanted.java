@@ -3,8 +3,7 @@ package com.almightyfork.unwanted;
 import com.almightyfork.unwanted.block.ModBlocks;
 import com.almightyfork.unwanted.block.entity.ModBlockEntities;
 import com.almightyfork.unwanted.block.entity.client.GemInfuserBlockRenderer;
-//import com.almightyfork.unwanted.event.JigsawHelper;
-//import com.almightyfork.unwanted.event.ModConfig;
+import com.almightyfork.unwanted.event.ModConfig;
 import com.almightyfork.unwanted.event.Layers;
 import com.almightyfork.unwanted.event.ModConfig;
 import com.almightyfork.unwanted.event.ModConfigHelper;
@@ -287,51 +286,51 @@ public class Unwanted
         }
     }
 
-//    public static void registerJigsaws(MinecraftServer server) {
-//        Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
-//        Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
-//
-//        ResourceLocation plainsPoolLocation = new ResourceLocation("minecraft:village/plains/houses");
-//        ResourceLocation desertPoolLocation = new ResourceLocation("minecraft:village/desert/houses");
-//        ResourceLocation savannaPoolLocation = new ResourceLocation("minecraft:village/savanna/houses");
-//        ResourceLocation snowyPoolLocation = new ResourceLocation("minecraft:village/snowy/houses");
-//        ResourceLocation taigaPoolLocation = new ResourceLocation("minecraft:village/taiga/houses");
-//
-//        // PLAINS VILLAGE HOUSES
-//        if (ModConfigHelper.generatePlainsHouses()) {
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_enchanter", ModConfigHelper.enchanterHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_musician", ModConfigHelper.musicianHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-//        }
-//
-//        // TAIGA VILLAGE HOUSES
-//        if (ModConfigHelper.generateTaigaHouses()) {
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_enchanter", ModConfigHelper.enchanterHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_musician", ModConfigHelper.musicianHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-//        }
-//
-//        // SAVANNA VILLAGE HOUSES
-//        if (ModConfigHelper.generateSavannaHouses()) {
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_enchanter", ModConfigHelper.enchanterHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_musician", ModConfigHelper.musicianHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-//        }
-//
-//        // SNOWY VILLAGE HOUSES
-//        if (ModConfigHelper.generateSnowyHouses()) {
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_enchanter", ModConfigHelper.enchanterHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_musician", ModConfigHelper.musicianHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-//        }
-//
-//        // DESERT VILLAGE HOUSES
-//        if (ModConfigHelper.generateDesertHouses()) {
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_enchanter", ModConfigHelper.enchanterHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_musician", ModConfigHelper.musicianHouseWeight());
-//            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-//        }
-//    }
+    public static void registerJigsaws(MinecraftServer server) {
+        Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
+        Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
+
+        ResourceLocation plainsPoolLocation = new ResourceLocation("minecraft:village/plains/houses");
+        ResourceLocation desertPoolLocation = new ResourceLocation("minecraft:village/desert/houses");
+        ResourceLocation savannaPoolLocation = new ResourceLocation("minecraft:village/savanna/houses");
+        ResourceLocation snowyPoolLocation = new ResourceLocation("minecraft:village/snowy/houses");
+        ResourceLocation taigaPoolLocation = new ResourceLocation("minecraft:village/taiga/houses");
+
+        // PLAINS VILLAGE HOUSES
+        if (ModConfigHelper.generatePlainsHouses()) {
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_enchanter", ModConfigHelper.enchanterHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_musician", ModConfigHelper.musicianHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
+        }
+
+        // TAIGA VILLAGE HOUSES
+        if (ModConfigHelper.generateTaigaHouses()) {
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_enchanter", ModConfigHelper.enchanterHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_musician", ModConfigHelper.musicianHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
+        }
+
+        // SAVANNA VILLAGE HOUSES
+        if (ModConfigHelper.generateSavannaHouses()) {
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_enchanter", ModConfigHelper.enchanterHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_musician", ModConfigHelper.musicianHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
+        }
+
+        // SNOWY VILLAGE HOUSES
+        if (ModConfigHelper.generateSnowyHouses()) {
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_enchanter", ModConfigHelper.enchanterHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_musician", ModConfigHelper.musicianHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
+        }
+
+        // DESERT VILLAGE HOUSES
+        if (ModConfigHelper.generateDesertHouses()) {
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_enchanter", ModConfigHelper.enchanterHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_musician", ModConfigHelper.musicianHouseWeight());
+            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
+        }
+    }
 
     @SubscribeEvent
     public void onServerAboutToStartEvent(ServerAboutToStartEvent event) {

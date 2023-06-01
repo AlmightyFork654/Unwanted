@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.DeferredRegister;
@@ -40,6 +41,12 @@ public class ModVillagers {
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.GEM_CUTTING_STATION.get().getStateDefinition().getPossibleStates()), 1, 1));
     public static final RegistryObject<VillagerProfession> GEM_CUTTER = VILLAGER_PROFESSIONS.register("gem_cutter",
             () -> new VillagerProfession("gem_cutter", x -> x.get() ==   GEM_CUTTING_STATION.get(), x -> x.get() == GEM_CUTTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_ARMORER));
+
+    //collecter
+    public static final RegistryObject<PoiType> COLLECTING_STATION = POI_TYPES.register("collecting_station",
+            () -> new PoiType(ImmutableSet.copyOf(Blocks.SHULKER_BOX.getStateDefinition().getPossibleStates()), 1, 1));
+    public static final RegistryObject<VillagerProfession> COLLECTOR = VILLAGER_PROFESSIONS.register("collector",
+            () -> new VillagerProfession("collector", x -> x.get() ==   COLLECTING_STATION.get(), x -> x.get() == COLLECTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
 
 
 
