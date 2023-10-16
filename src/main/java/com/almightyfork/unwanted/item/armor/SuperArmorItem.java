@@ -1,6 +1,7 @@
 package com.almightyfork.unwanted.item.armor;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;

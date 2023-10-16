@@ -10,7 +10,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class GemInfuserMenu extends AbstractContainerMenu {
@@ -18,21 +18,21 @@ public class GemInfuserMenu extends AbstractContainerMenu {
     private final Level level;
     private final ContainerData data;
 
-    public GemInfuserMenu(int p_38852_, Inventory inv, FriendlyByteBuf extraData) {
-        this(p_38852_, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+    public GemInfuserMenu(int pContainerID, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerID, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public GemInfuserMenu(int p_38852_, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.GEM_INFUSER_MENU.get(), p_38852_);
+    public GemInfuserMenu(int pContainerID, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.GEM_INFUSER_MENU.get(), pContainerID);
         checkContainerSize(inv, 4);
         blockEntity = ((GemInfuserBlockEntity) entity);
-        this.level = inv.player.level;
+        this.level = inv.player.level();
         this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
+        this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 44, 22));
             this.addSlot(new SlotItemHandler(handler, 1, 80, 31));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 22));

@@ -1,5 +1,6 @@
-package com.almightyfork.unwanted.datagen;
+package com.almightyfork.unwanted.datagen.loot;
 
+import com.almightyfork.unwanted.datagen.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;

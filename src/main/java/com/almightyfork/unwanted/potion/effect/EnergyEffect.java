@@ -13,7 +13,7 @@ public class EnergyEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity livingEntity, int pAmplifier) {
-        if (!livingEntity.level.isClientSide()){
+        if (!livingEntity.level().isClientSide()){
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 1));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));

@@ -44,7 +44,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -67,6 +67,8 @@ public class Unwanted
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, ModConfig.COMMON_CONFIG);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -94,13 +96,13 @@ public class Unwanted
             BrewingRecipeRegistry.addRecipe(new EPBrewingRecipe(Potions.AWKWARD,
                     ModItems.TORRID_STEEL_POWDER.get(), ModPotions.ENERGY_POTION.get()));
 
-            ModVillagers.registerPOI();
+//            ModVillagers.registerPOI();
         });
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-        if(event.getTab() == ModCreativeModeTabs.ITEMS_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.ITEMS_TAB.get()) {
             event.accept(ModItems.ROUGH_RUBY);
             event.accept(ModItems.RUBY);
             event.accept(ModItems.PURE_RUBY);
@@ -120,7 +122,7 @@ public class Unwanted
             event.accept(ModItems.CAVE_WHISPERS_MUSIC_DISK);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.BLOCKS_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.BLOCKS_TAB.get()) {
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.EMBARIUM_ORE);
             event.accept(ModBlocks.DEEPSLATE_EMBARIUM_ORE);
@@ -178,7 +180,7 @@ public class Unwanted
             event.accept(ModBlocks.TORRID_FURNACE);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.SLABS_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.SLABS_TAB.get()) {
             event.accept(ModBlocks.MARBLE_SLAB);
             event.accept(ModBlocks.SMOOTH_MARBLE_SLAB);
             event.accept(ModBlocks.POLISHED_MARBLE_SLAB);
@@ -188,7 +190,7 @@ public class Unwanted
             event.accept(ModBlocks.EBONY_SLAB);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.STAIRS_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.STAIRS_TAB.get()) {
             event.accept(ModBlocks.MARBLE_STAIRS);
             event.accept(ModBlocks.SMOOTH_MARBLE_STAIRS);
             event.accept(ModBlocks.POLISHED_MARBLE_STAIRS);
@@ -198,7 +200,7 @@ public class Unwanted
             event.accept(ModBlocks.EBONY_STAIRS);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.WALLS_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.WALLS_TAB.get()) {
             event.accept(ModBlocks.MARBLE_WALL);
             event.accept(ModBlocks.SMOOTH_MARBLE_WALL);
             event.accept(ModBlocks.POLISHED_MARBLE_WALL);
@@ -207,7 +209,7 @@ public class Unwanted
             event.accept(ModBlocks.MOSSY_MARBLE_BRICKS_WALL);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.TOOLS_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.TOOLS_TAB.get()) {
             event.accept(ModItems.TORRID_STEEL_SWORD);
             event.accept(ModItems.TORRID_STEEL_PICKAXE);
             event.accept(ModItems.TORRID_STEEL_AXE);
@@ -231,7 +233,7 @@ public class Unwanted
             event.accept(ModItems.RUBY_DETECTOR);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.COMBAT_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.COMBAT_TAB.get()) {
             event.accept(ModItems.TORRID_HELMET);
             event.accept(ModItems.TORRID_CHESTPLATE);
             event.accept(ModItems.TORRID_LEGGINGS);
@@ -250,7 +252,7 @@ public class Unwanted
             event.accept(ModItems.PROFUNDIUM_BOOTS);
         }
 
-        if(event.getTab() == ModCreativeModeTabs.REDSTONE_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.REDSTONE_TAB.get()) {
             event.accept(ModBlocks.TORRID_STEEL_DOOR);
             event.accept(ModBlocks.TORRID_STEEL_TRAPDOOR);
             event.accept(ModBlocks.TORRID_STEEL_BARS_DOOR);

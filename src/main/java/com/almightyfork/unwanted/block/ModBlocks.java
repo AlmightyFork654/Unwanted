@@ -17,11 +17,12 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Supplier;
 
@@ -32,46 +33,46 @@ public class ModBlocks {
     //ores
 
     public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)));
     public static final RegistryObject<Block> TORRID_STEEL_ORE = registerBlock("torrid_steel_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)));
     public static final RegistryObject<Block> EMBARIUM_ORE = registerBlock("embarium_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)));
     public static final RegistryObject<Block> DEEPSLATE_EMBARIUM_ORE = registerBlock("deepslate_embarium_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)));
     public static final RegistryObject<Block> PROFUNDIUM_ORE = registerBlock("profundium_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)));
 
     //block
 
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).sound(SoundType.METAL).strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TORRID_STEEL_BLOCK = registerBlock("torrid_steel_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL).strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TORRID_STEEL_BARS = registerBlock("torrid_steel_bars",
-            () -> new IronBarsBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(5F, 6F).destroyTime(5).requiresCorrectToolForDrops().noOcclusion()));
+            () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).sound(SoundType.METAL).strength(5F, 6F).destroyTime(5).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final RegistryObject<Block> EMBARIUM_BLOCK = registerBlock("embarium_block",
             () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(ModSounds.EMBARIUM_SOUNDS)
                     .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> 8)));
 
     public static final RegistryObject<Block> PROFUNDIUM_BLOCK = registerBlock("profundium_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(50F, 50F).destroyTime(10)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).sound(SoundType.METAL).strength(50F, 50F).destroyTime(10)));
 
     public static final RegistryObject<Block> EMBARIUM_LAMP_BLOCK = registerBlock("embarium_lamp_block",
-            () -> new EmbariumLampBlock(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.AMETHYST_CLUSTER)
+            () -> new EmbariumLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP).sound(SoundType.AMETHYST_CLUSTER)
                     .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> blockState.getValue(EmbariumLampBlock.CLICKED) ? 15 : 0)));
 
 
@@ -89,155 +90,155 @@ public class ModBlocks {
     //bouncy
 
     public static final RegistryObject<Block> WHITE_BOUNCER_BLOCK = registerBlock("white_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> BLACK_BOUNCER_BLOCK = registerBlock("black_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> GRAY_BOUNCER_BLOCK = registerBlock("gray_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> LIGHT_GRAY_BOUNCER_BLOCK = registerBlock("light_gray_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> BROWN_BOUNCER_BLOCK = registerBlock("brown_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> BLUE_BOUNCER_BLOCK = registerBlock("blue_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> CYAN_BOUNCER_BLOCK = registerBlock("cyan_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> LIGHT_BLUE_BOUNCER_BLOCK = registerBlock("light_blue_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> GREEN_BOUNCER_BLOCK = registerBlock("green_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> LIME_BOUNCER_BLOCK = registerBlock("lime_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> MAGENTA_BOUNCER_BLOCK = registerBlock("magenta_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> ORANGE_BOUNCER_BLOCK = registerBlock("orange_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> PINK_BOUNCER_BLOCK = registerBlock("pink_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> PURPLE_BOUNCER_BLOCK = registerBlock("purple_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> RED_BOUNCER_BLOCK = registerBlock("red_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
     public static final RegistryObject<Block> YELLOW_BOUNCER_BLOCK = registerBlock("yellow_bouncer_block",
-            () -> new BouncerBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
+            () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
 
     public static final RegistryObject<Block> SPEEDER_BLOCK = registerBlock("speeder_block",
-            () -> new SpeederBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(1.0F).destroyTime(1).instabreak()));
+            () -> new SpeederBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(1.0F).destroyTime(1).instabreak()));
 
     //marble
     public static final RegistryObject<Block> MARBLE = registerBlock("marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> SMOOTH_MARBLE = registerBlock("smooth_marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DOUBLE_SMOOTH_MARBLE_SLAB = registerBlock("double_smooth_marble_slab",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> POLISHED_MARBLE = registerBlock("polished_marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DOUBLE_POLISHED_MARBLE_SLAB = registerBlock("double_polished_marble_slab",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> MARBLE_BRICKS = registerBlock("marble_bricks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CRACKED_MARBLE_BRICKS = registerBlock("cracked_marble_bricks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MOSSY_MARBLE_BRICKS = registerBlock("mossy_marble_bricks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> CHISELED_W_MARBLE = registerBlock("chiseled_w_marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_S_MARBLE = registerBlock("chiseled_s_marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_C_MARBLE = registerBlock("chiseled_c_marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_E_MARBLE = registerBlock("chiseled_e_marble",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> MARBLE_PILLAR = registerBlock("marble_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     //marble stairs
     public static final RegistryObject<Block> MARBLE_STAIRS = registerBlock("marble_stairs",
-            () -> new StairBlock(() -> ModBlocks.MARBLE.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new StairBlock(() -> ModBlocks.MARBLE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SMOOTH_MARBLE_STAIRS = registerBlock("smooth_marble_stairs",
-            () -> new StairBlock(() -> ModBlocks.SMOOTH_MARBLE.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new StairBlock(() -> ModBlocks.SMOOTH_MARBLE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> POLISHED_MARBLE_STAIRS = registerBlock("polished_marble_stairs",
-            () -> new StairBlock(() -> ModBlocks.POLISHED_MARBLE.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new StairBlock(() -> ModBlocks.POLISHED_MARBLE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MARBLE_BRICKS_STAIRS = registerBlock("marble_bricks_stairs",
-            () -> new StairBlock(() -> ModBlocks.MARBLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new StairBlock(() -> ModBlocks.MARBLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CRACKED_MARBLE_BRICKS_STAIRS = registerBlock("cracked_marble_bricks_stairs",
-            () -> new StairBlock(() -> ModBlocks.CRACKED_MARBLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(1).requiresCorrectToolForDrops()));
+            () -> new StairBlock(() -> ModBlocks.CRACKED_MARBLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(1).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MOSSY_MARBLE_BRICKS_STAIRS = registerBlock("mossy_marble_bricks_stairs",
-            () -> new StairBlock(() -> ModBlocks.MOSSY_MARBLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new StairBlock(() -> ModBlocks.MOSSY_MARBLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     //marble slabs
     public static final RegistryObject<Block> MARBLE_SLAB = registerBlock("marble_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SMOOTH_MARBLE_SLAB = registerBlock("smooth_marble_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> POLISHED_MARBLE_SLAB = registerBlock("polished_marble_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MARBLE_BRICKS_SLAB = registerBlock("marble_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CRACKED_MARBLE_BRICKS_SLAB = registerBlock("cracked_marble_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(1).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(1).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MOSSY_MARBLE_BRICKS_SLAB = registerBlock("mossy_marble_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     //marble walls
     public static final RegistryObject<Block> MARBLE_WALL = registerBlock("marble_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SMOOTH_MARBLE_WALL = registerBlock("smooth_marble_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> POLISHED_MARBLE_WALL = registerBlock("polished_marble_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MARBLE_BRICKS_WALL = registerBlock("marble_bricks_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CRACKED_MARBLE_BRICKS_WALL = registerBlock("cracked_marble_bricks_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(1).requiresCorrectToolForDrops()));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(1).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MOSSY_MARBLE_BRICKS_WALL = registerBlock("mossy_marble_bricks_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
         // non-blocks
 
     //doors
 
     public static final RegistryObject<Block> TORRID_STEEL_DOOR = registerBlock("torrid_steel_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.METAL, TORRID_STEEL_BLOCK.get().defaultMaterialColor()).sound(SoundType.METAL)
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_DOOR).sound(SoundType.METAL)
                     .strength(5F, 6F).destroyTime(32).noOcclusion(), BlockSetType.IRON));
 
     public static final RegistryObject<Block> TORRID_STEEL_BARS_DOOR = registerBlock("torrid_steel_bars_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, TORRID_STEEL_BARS.get().defaultMaterialColor()).sound(SoundType.METAL)
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.METAL)
                     .strength(5F, 6F).destroyTime(16).noOcclusion(), BlockSetType.IRON));
 
     //trapdoors
 
     public static final RegistryObject<Block> TORRID_STEEL_TRAPDOOR = registerBlock("torrid_steel_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL, TORRID_STEEL_BLOCK.get().defaultMaterialColor()).sound(SoundType.METAL)
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR).sound(SoundType.METAL)
                     .strength(5F, 6F).destroyTime(32).noOcclusion(), BlockSetType.IRON));
 
     public static final RegistryObject<Block> TORRID_STEEL_BARS_TRAPDOOR = registerBlock("torrid_steel_bars_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, TORRID_STEEL_BARS.get().defaultMaterialColor()).sound(SoundType.METAL)
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).sound(SoundType.METAL)
                     .strength(5F, 6F).destroyTime(16).noOcclusion(), BlockSetType.IRON));
 
     //buttons
 
     public static final RegistryObject<Block> TORRID_STEEL_BUTTON = registerBlock("torrid_steel_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.METAL)
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.METAL)
                     .strength(5F, 6F).destroyTime(4).noCollission(), BlockSetType.IRON, 40, false));
 
     public static final RegistryObject<Block> MARBLE_BUTTON = registerBlock("marble_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE)
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)
                     .strength(1.5F, 3F).destroyTime(2).noCollission(), BlockSetType.STONE, 30, false));
 
     //pressure plates
 
     public static final RegistryObject<Block> TORRID_STEEL_PRESSURE_PLATE = registerBlock("torrid_steel_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.METAL, TORRID_STEEL_BLOCK.get().defaultMaterialColor())
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)
                     .sound(SoundType.METAL).strength(5F, 6F).destroyTime(4), BlockSetType.IRON));
 
     public static final RegistryObject<Block> MARBLE_PRESSURE_PLATE = registerBlock("marble_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.STONE, MARBLE.get().defaultMaterialColor())
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE)
                     .sound(SoundType.STONE).strength(1.5F, 3F).destroyTime(2), BlockSetType.STONE));
 
     //nature
@@ -310,33 +311,33 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EBONY_STAIRS = registerBlock("ebony_stairs",
             () -> new StairBlock(() -> ModBlocks.EBONY_PLANKS.get().defaultBlockState(),
-                    BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F)));
+                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS).strength(1F, 2F)));
     public static final RegistryObject<Block> EBONY_SLAB = registerBlock("ebony_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)
                     .strength(1F, 2F)));
 
 //    FIR_SIGN = registerBlockNoBlockItem(() -> new StandingSignBlockBOP(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), BOPWoodTypes.FIR), "fir_sign");
 //    FIR_WALL_SIGN = registerBlockNoBlockItem(() -> new WallSignBlockBOP(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(FIR_SIGN), BOPWoodTypes.FIR), "fir_wall_sign");
 
     public static final RegistryObject<Block> EBONY_FENCE = registerBlock("ebony_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
                     .strength(1F, 2F)));
     public static final RegistryObject<Block> EBONY_FENCE_GATE = registerBlock("ebony_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)
                     .strength(1F, 2F), WoodType.OAK));
 
     public static final RegistryObject<Block> EBONY_BUTTON = registerBlock("ebony_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)
                     .strength(1F, 2F).noCollission().destroyTime(2), BlockSetType.OAK, 20, true));
     public static final RegistryObject<Block> EBONY_PRESSURE_PLATE = registerBlock("ebony_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)
                     .strength(1F, 2F).destroyTime(2), BlockSetType.OAK));
 
     public static final RegistryObject<Block> EBONY_DOOR = registerBlock("ebony_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)
                     .strength(1F, 2F).noOcclusion(), BlockSetType.OAK));
     public static final RegistryObject<Block> EBONY_TRAPDOOR = registerBlock("ebony_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, EBONY_PLANKS.get().defaultMaterialColor())
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)
                     .strength(1F, 2F).noOcclusion(), BlockSetType.OAK));
 
 

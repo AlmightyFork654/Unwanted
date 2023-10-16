@@ -28,37 +28,37 @@ public class ModVillagers {
     public static final RegistryObject<PoiType> ENCHANTING_TABLE = POI_TYPES.register("enchanting_table",
             () -> new PoiType(ImmutableSet.copyOf(Blocks.ENCHANTING_TABLE.getStateDefinition().getPossibleStates()), 1, 1));
     public static final RegistryObject<VillagerProfession> ENCHANTER = VILLAGER_PROFESSIONS.register("enchanter",
-            () -> new VillagerProfession("enchanter", x -> x.get() ==  ENCHANTING_TABLE.get(), x -> x.get() == ENCHANTING_TABLE.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
+            () -> new VillagerProfession("enchanter", holder -> holder.get() ==  ENCHANTING_TABLE.get(), holder -> holder.get() == ENCHANTING_TABLE.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
 
     //musician
     public static final RegistryObject<PoiType> JUKEBOX = POI_TYPES.register("jukebox",
             () -> new PoiType(ImmutableSet.copyOf(Blocks.JUKEBOX.getStateDefinition().getPossibleStates()), 1, 1));
     public static final RegistryObject<VillagerProfession> MUSICIAN = VILLAGER_PROFESSIONS.register("musician",
-            () -> new VillagerProfession("musician", x -> x.get() ==   JUKEBOX.get(), x -> x.get() == JUKEBOX.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_MASON));
+            () -> new VillagerProfession("musician", holder -> holder.get() ==   JUKEBOX.get(), holder -> holder.get() == JUKEBOX.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_MASON));
 
     //gem cutter
     public static final RegistryObject<PoiType> GEM_CUTTING_STATION = POI_TYPES.register("gem_cutting_station",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.GEM_CUTTING_STATION.get().getStateDefinition().getPossibleStates()), 1, 1));
     public static final RegistryObject<VillagerProfession> GEM_CUTTER = VILLAGER_PROFESSIONS.register("gem_cutter",
-            () -> new VillagerProfession("gem_cutter", x -> x.get() ==   GEM_CUTTING_STATION.get(), x -> x.get() == GEM_CUTTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_ARMORER));
+            () -> new VillagerProfession("gem_cutter", holder -> holder.get() ==   GEM_CUTTING_STATION.get(), holder -> holder.get() == GEM_CUTTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_ARMORER));
 
     //collecter
     public static final RegistryObject<PoiType> COLLECTING_STATION = POI_TYPES.register("collecting_station",
             () -> new PoiType(ImmutableSet.copyOf(Blocks.SHULKER_BOX.getStateDefinition().getPossibleStates()), 1, 1));
     public static final RegistryObject<VillagerProfession> COLLECTOR = VILLAGER_PROFESSIONS.register("collector",
-            () -> new VillagerProfession("collector", x -> x.get() ==   COLLECTING_STATION.get(), x -> x.get() == COLLECTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
+            () -> new VillagerProfession("collector", holder -> holder.get() ==   COLLECTING_STATION.get(), holder -> holder.get() == COLLECTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
 
 
 
     //other stuff
-    public static void registerPOI() {
-        try {
-            ObfuscationReflectionHelper.findMethod(PoiType.class, "registerBlockStates", PoiType.class).invoke(null, POI_TYPES.getClass());
-        }
-        catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void registerPOI() {
+//        try {
+//            ObfuscationReflectionHelper.findMethod(PoiType.class, "registerBlockStates", PoiType.class).invoke(null, POI_TYPES.getClass());
+//        }
+//        catch (InvocationTargetException | IllegalAccessException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);

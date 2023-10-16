@@ -3,6 +3,7 @@ package com.almightyfork.unwanted.screen;
 import com.almightyfork.unwanted.Unwanted;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
@@ -18,24 +19,28 @@ public class GemInfuserScreen extends AbstractContainerScreen<GemInfuserMenu> {
     }
 
     @Override
-    protected void renderBg(PoseStack pPoseStack, float p_97788_, int p_97789_, int p_97790_) {
+    protected void renderBg(GuiGraphics guiGraphics, float p_97788_, int p_97789_, int p_97790_) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
+        renderProgressArrow(guiGraphics, x, y);
+    }
+
+    private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y){
         if(menu.isCrafting()) {
-            blit(pPoseStack, x + 101, y + 40, 176, 0, 8, menu.getScaledProgress());
+            guiGraphics.blit(TEXTURE, x + 101, y + 40, 176, 0, 8, menu.getScaledProgress());
         }
     }
 
     @Override
-    public void render(PoseStack pPoseStack, int mouseX, int mouseY, float delta) {
-        renderBackground(pPoseStack);
-        super.render(pPoseStack, mouseX, mouseY, delta);
-        renderTooltip(pPoseStack, mouseX, mouseY);
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float delta) {
+        renderBackground(guiGraphics);
+        super.render(guiGraphics, mouseX, mouseY, delta);
+        renderTooltip(guiGraphics, mouseX, mouseY);
     }
 }

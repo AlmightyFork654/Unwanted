@@ -11,7 +11,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class TorridFurnaceMenu extends AbstractContainerMenu {
@@ -19,22 +19,22 @@ public class TorridFurnaceMenu extends AbstractContainerMenu {
     private final Level level;
     private final ContainerData data;
 
-    public TorridFurnaceMenu(int p_38852_, Inventory inv, FriendlyByteBuf extraData) {
-        this(p_38852_, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+    public TorridFurnaceMenu(int pContainerID, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerID, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
     @Deprecated
-    public TorridFurnaceMenu(int p_38852_, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.TORRID_FURNACE_MENU.get(), p_38852_);
+    public TorridFurnaceMenu(int pContainerID, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.TORRID_FURNACE_MENU.get(), pContainerID);
         checkContainerSize(inv, 4);
         blockEntity = ((TorridFurnaceBlockEntity) entity);
-        this.level = inv.player.level;
+        this.level = inv.player.level();
         this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
+        this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new ModFuelSlot(handler, 0, 44, 53));
             this.addSlot(new SlotItemHandler(handler, 1, 44, 17));
             this.addSlot(new SlotItemHandler(handler, 2, 80, 53));
