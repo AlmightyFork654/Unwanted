@@ -95,8 +95,6 @@ public class Unwanted
 
             BrewingRecipeRegistry.addRecipe(new EPBrewingRecipe(Potions.AWKWARD,
                     ModItems.TORRID_STEEL_POWDER.get(), ModPotions.ENERGY_POTION.get()));
-
-//            ModVillagers.registerPOI();
         });
     }
 

@@ -48,18 +48,6 @@ public class ModVillagers {
     public static final RegistryObject<VillagerProfession> COLLECTOR = VILLAGER_PROFESSIONS.register("collector",
             () -> new VillagerProfession("collector", holder -> holder.get() ==   COLLECTING_STATION.get(), holder -> holder.get() == COLLECTING_STATION.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
 
-
-
-    //other stuff
-//    public static void registerPOI() {
-//        try {
-//            ObfuscationReflectionHelper.findMethod(PoiType.class, "registerBlockStates", PoiType.class).invoke(null, POI_TYPES.getClass());
-//        }
-//        catch (InvocationTargetException | IllegalAccessException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);
         VILLAGER_PROFESSIONS.register(eventBus);
