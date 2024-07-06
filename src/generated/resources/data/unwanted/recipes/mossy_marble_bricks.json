@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "m": {
+      "item": "unwanted:marble_bricks"
+    },
+    "v": {
+      "item": "minecraft:vine"
+    }
+  },
+  "pattern": [
+    "v",
+    "m"
+  ],
+  "result": {
+    "item": "unwanted:mossy_marble_bricks"
+  },
+  "show_notification": true
+}

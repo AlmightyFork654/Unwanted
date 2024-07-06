@@ -1,0 +1,18 @@
+{
+    "parent": "minecraft:item/handheld",
+    "loader": "forge:separate_transforms",
+    "base": {
+        "parent": "unwanted:item/wooden_spear_in_hand"
+    },
+    "perspectives": {
+        "gui": {
+            "parent": "unwanted:item/wooden_spear_inv"
+        },
+        "ground": {
+            "parent": "unwanted:item/wooden_spear_inv"
+        },
+        "fixed": {
+            "parent": "unwanted:item/wooden_spear_inv"
+        }
+    }
+}

@@ -6,6 +6,7 @@ import com.almightyfork.unwanted.misc.CustomTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -14,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagGenerator extends BlockTagsProvider {
-    public ModBlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+    public ModBlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, Unwanted.MODID, existingFileHelper);
     }
 
@@ -50,6 +51,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.PROFUNDIUM_ORE.get(),
                         ModBlocks.RUBY_BLOCK.get(),
                         ModBlocks.EMBARIUM_BLOCK.get(),
+                        ModBlocks.EMBARIUM_LAMP_BLOCK.get(),
                         ModBlocks.PROFUNDIUM_BLOCK.get(),
                         ModBlocks.TORRID_STEEL_BLOCK.get(),
                         ModBlocks.TORRID_STEEL_BARS.get(),
@@ -150,6 +152,5 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.RUBY_ORE.get(), ModBlocks.PROFUNDIUM_ORE.get());
                 this.tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.EMBARIUM_ORE.get(), ModBlocks.DEEPSLATE_EMBARIUM_ORE.get());
                 this.tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.TORRID_STEEL_ORE.get());
-
     }
 }

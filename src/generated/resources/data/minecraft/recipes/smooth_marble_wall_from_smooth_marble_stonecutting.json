@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "unwanted:smooth_marble"
+  },
+  "result": "unwanted:smooth_marble_wall"
+}

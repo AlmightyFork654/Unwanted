@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unwanted:torrid_steel_powder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torrid_steel_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "unwanted:torrid_steel_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_torrid_steel_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unwanted:torrid_steel_powder"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -13,8 +13,8 @@ public class ModPotions {
     public static final DeferredRegister<Potion> POTIONS =
             DeferredRegister.create(ForgeRegistries.POTIONS, Unwanted.MODID);
 
-    public static final RegistryObject<Potion> ENERGY_POTION = POTIONS.register("energy_potion",
-            () -> new Potion(new MobEffectInstance(ModEffects.ENERGY.get(), 400, 0)));
+    public static final RegistryObject<Potion> FRAGILE_POTION = POTIONS.register("fragile_potion",
+            () -> new Potion(new MobEffectInstance(ModEffects.FRAGILE.get(), 1800, 0)));
 
     public static void register(IEventBus eventBus){
         POTIONS.register(eventBus);

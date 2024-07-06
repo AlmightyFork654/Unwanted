@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 160,
+  "experience": 0.3,
+  "group": "embarium",
+  "ingredient": {
+    "item": "unwanted:deepslate_embarium_ore"
+  },
+  "result": "unwanted:embarium"
+}

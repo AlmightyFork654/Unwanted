@@ -11,6 +11,7 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Unwanted.MODID);
 
+
     public static final RegistryObject<RecipeSerializer<GemCuttingStationRecipe>> GEM_CUTTING_SERIALIZER =
             SERIALIZERS.register("gem_cutting", () -> GemCuttingStationRecipe.Serializer.INSTANCE);
 
@@ -19,6 +20,9 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<TorridFurnaceRecipe>> TORRID_FURNACE_SERIALIZER =
             SERIALIZERS.register("torrid_furnace", () -> TorridFurnaceRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<KettleRecipe>> KETTLE_SERIALIZER =
+            SERIALIZERS.register("kettle", () -> KettleRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

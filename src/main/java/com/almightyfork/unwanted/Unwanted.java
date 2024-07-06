@@ -3,52 +3,45 @@ package com.almightyfork.unwanted;
 import com.almightyfork.unwanted.block.ModBlocks;
 import com.almightyfork.unwanted.block.entity.ModBlockEntities;
 import com.almightyfork.unwanted.block.entity.client.GemInfuserBlockRenderer;
-import com.almightyfork.unwanted.event.ModConfig;
-import com.almightyfork.unwanted.event.Layers;
-import com.almightyfork.unwanted.event.ModConfig;
-import com.almightyfork.unwanted.event.ModConfigHelper;
-import com.almightyfork.unwanted.event.ModEventClientBusEvents;
-import com.almightyfork.unwanted.event.jigsaw.JigsawHelper;
+import com.almightyfork.unwanted.entity.ModEntities;
+import com.almightyfork.unwanted.entity.client.ModBoatRenderer;
+import com.almightyfork.unwanted.entity.client.ModModelLayers;
 import com.almightyfork.unwanted.item.ModItems;
-import com.almightyfork.unwanted.item.armor.ProfundiumElytraLayer;
+import com.almightyfork.unwanted.item.armor.layers.*;
+import com.almightyfork.unwanted.item.trident.iron.ThrownIronSpearRenderer;
+import com.almightyfork.unwanted.item.trident.wood.ThrownWoodenSpearRenderer;
 import com.almightyfork.unwanted.misc.EPBrewingRecipe;
 import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
+import com.almightyfork.unwanted.misc.ModWoodTypes;
 import com.almightyfork.unwanted.potion.ModPotions;
 import com.almightyfork.unwanted.potion.effect.ModEffects;
 import com.almightyfork.unwanted.recipe.ModRecipes;
-import com.almightyfork.unwanted.screen.GemCuttingStationScreen;
-import com.almightyfork.unwanted.screen.GemInfuserScreen;
 import com.almightyfork.unwanted.screen.ModMenuTypes;
-import com.almightyfork.unwanted.screen.TorridFurnaceScreen;
 import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.villager.ModVillagers;
+import com.almightyfork.unwanted.worldgen.tree.custom.ModFoliagePlacers;
+import com.almightyfork.unwanted.worldgen.tree.custom.ModTrunkPlacerTypes;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.entity.ArmorStandRenderer;
+import net.minecraft.client.renderer.entity.*;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderPlayerEvent;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -66,15 +59,16 @@ public class Unwanted
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, ModConfig.COMMON_CONFIG);
-
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacers.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
@@ -85,7 +79,8 @@ public class Unwanted
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(Layers::registerLayers);
+//        modEventBus.addListener(Layers::registerLayers);
+        modEventBus.addListener(this::registerElytraLayer);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -94,7 +89,7 @@ public class Unwanted
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.EBONY_SAPLING.getId(), ModBlocks.POTTED_EBONY_SAPLING);
 
             BrewingRecipeRegistry.addRecipe(new EPBrewingRecipe(Potions.AWKWARD,
-                    ModItems.TORRID_STEEL_POWDER.get(), ModPotions.ENERGY_POTION.get()));
+                    ModItems.TORRID_STEEL_POWDER.get(), ModPotions.FRAGILE_POTION.get()));
         });
     }
 
@@ -111,13 +106,25 @@ public class Unwanted
             event.accept(ModItems.PROFUNDIUM_FLAKE);
             event.accept(ModItems.PROFUNDIUM_SCRAP);
             event.accept(ModItems.PROFUNDIUM_INGOT);
-            event.accept(ModItems.CHISEL);
-            event.accept(ModItems.NETHERITE_CHISEL);
             event.accept(ModItems.MARBLE_SHARD);
             event.accept(ModItems.BLAZING_WATER);
             event.accept(ModItems.PURE_BLAZE_POWDER);
+            event.accept(ModItems.WOODEN_SPEAR_HEAD);
             event.accept(ModItems.DARKNESS_MUSIC_DISK);
             event.accept(ModItems.CAVE_WHISPERS_MUSIC_DISK);
+            event.accept(ModItems.EBONY_BOAT);
+            event.accept(ModItems.EBONY_CHEST_BOAT);
+
+            event.accept(ModItems.TEA_CUP);
+            event.accept(ModItems.GRASSY_TEA);
+            event.accept(ModItems.WARPED_TEA);
+            event.accept(ModItems.CRIMSON_TEA);
+            event.accept(ModItems.LEAVY_TEA);
+            event.accept(ModItems.KELPED_TEA);
+            event.accept(ModItems.VINEY_TEA);
+            event.accept(ModItems.GLOWY_TEA);
+            event.accept(ModItems.SCULKED_TEA);
+            event.accept(ModItems.ROOTED_TEA);
         }
 
         if(event.getTab() == ModCreativeModeTabs.BLOCKS_TAB.get()) {
@@ -154,6 +161,8 @@ public class Unwanted
             event.accept(ModBlocks.EBONY_LEAVES);
             event.accept(ModBlocks.EBONY_SAPLING);
             event.accept(ModBlocks.TORRID_BUSH);
+            event.accept(ModItems.EBONY_SIGN);
+            event.accept(ModItems.EBONY_HANGING_SIGN);
 
             event.accept(ModBlocks.RED_BOUNCER_BLOCK);
             event.accept(ModBlocks.ORANGE_BOUNCER_BLOCK);
@@ -176,6 +185,7 @@ public class Unwanted
             event.accept(ModBlocks.GEM_CUTTING_STATION);
             event.accept(ModBlocks.GEM_INFUSER);
             event.accept(ModBlocks.TORRID_FURNACE);
+            event.accept(ModBlocks.KETTLE);
         }
 
         if(event.getTab() == ModCreativeModeTabs.SLABS_TAB.get()) {
@@ -228,6 +238,10 @@ public class Unwanted
             event.accept(ModItems.PROFUNDIUM_AXE);
             event.accept(ModItems.PROFUNDIUM_SHOVEL);
             event.accept(ModItems.PROFUNDIUM_HOE);
+            event.accept(ModItems.WOODEN_SPEAR);
+            event.accept(ModItems.IRON_SPEAR);
+            event.accept(ModItems.CHISEL);
+            event.accept(ModItems.NETHERITE_CHISEL);
             event.accept(ModItems.RUBY_DETECTOR);
         }
 
@@ -248,6 +262,7 @@ public class Unwanted
             event.accept(ModItems.PROFUNDIUM_CHESTPLATE);
             event.accept(ModItems.PROFUNDIUM_LEGGINGS);
             event.accept(ModItems.PROFUNDIUM_BOOTS);
+            event.accept(ModItems.ELYTRA_GLIDER);
         }
 
         if(event.getTab() == ModCreativeModeTabs.REDSTONE_TAB.get()) {
@@ -272,69 +287,32 @@ public class Unwanted
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            Sheets.addWoodType(ModWoodTypes.EBONY);
+
             BlockEntityRenderers.register(ModBlockEntities.GEM_INFUSER_BLOCK_ENTITY.get(), GemInfuserBlockRenderer::new);
+            EntityRenderers.register(ModEntities.MOD_BOAT.get(), p_174010_ -> new ModBoatRenderer(p_174010_, false));
+            EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), p_174010_ -> new ModBoatRenderer(p_174010_, true));
+            EntityRenderers.register(ModEntities.WOODEN_SPEAR.get(), p_174420_ -> new ThrownWoodenSpearRenderer(p_174420_, ModModelLayers.WOODEN_SPEAR));
+            EntityRenderers.register(ModEntities.IRON_SPEAR.get(), ThrownIronSpearRenderer::new);
         }
     }
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-    public static class ClientForgeEvents {
-        @SubscribeEvent
-        public static void renderPlayer(RenderPlayerEvent.Pre event)
-        {
-            PlayerRenderer renderer = event.getRenderer();
-            renderer.addLayer(new ProfundiumElytraLayer<>(renderer, Minecraft.getInstance().getEntityModels()));
+    @OnlyIn(Dist.CLIENT)
+    private void registerElytraLayer(EntityRenderersEvent event) {
+        if(event instanceof EntityRenderersEvent.AddLayers addLayersEvent){
+            EntityModelSet entityModels = addLayersEvent.getEntityModels();
+            addLayersEvent.getSkins().forEach(s -> {
+                LivingEntityRenderer<? extends Player, ? extends EntityModel<? extends Player>> livingEntityRenderer = addLayersEvent.getSkin(s);
+                if(livingEntityRenderer instanceof PlayerRenderer playerRenderer){
+                    playerRenderer.addLayer(new ElytraGliderLayer(playerRenderer, entityModels));
+                    playerRenderer.addLayer(new ProfundiumElytraLayer(playerRenderer, entityModels));
+                }
+            });
+            LivingEntityRenderer<ArmorStand, ? extends EntityModel<ArmorStand>> livingEntityRenderer = addLayersEvent.getRenderer(EntityType.ARMOR_STAND);
+            if(livingEntityRenderer instanceof ArmorStandRenderer armorStandRenderer){
+                armorStandRenderer.addLayer(new ElytraGliderArmorStandLayer(armorStandRenderer, entityModels));
+                armorStandRenderer.addLayer(new ProfundiumElytraArmorStandLayer(armorStandRenderer, entityModels));
+            }
         }
     }
-
-    public static void registerJigsaws(MinecraftServer server) {
-        Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
-        Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
-
-        ResourceLocation plainsPoolLocation = new ResourceLocation("minecraft:village/plains/houses");
-        ResourceLocation desertPoolLocation = new ResourceLocation("minecraft:village/desert/houses");
-        ResourceLocation savannaPoolLocation = new ResourceLocation("minecraft:village/savanna/houses");
-        ResourceLocation snowyPoolLocation = new ResourceLocation("minecraft:village/snowy/houses");
-        ResourceLocation taigaPoolLocation = new ResourceLocation("minecraft:village/taiga/houses");
-
-        // PLAINS VILLAGE HOUSES
-        if (ModConfigHelper.generatePlainsHouses()) {
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_enchanter", ModConfigHelper.enchanterHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_musician", ModConfigHelper.musicianHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, plainsPoolLocation, "unwanted:village/plains/plains_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-        }
-
-        // TAIGA VILLAGE HOUSES
-        if (ModConfigHelper.generateTaigaHouses()) {
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_enchanter", ModConfigHelper.enchanterHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_musician", ModConfigHelper.musicianHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, taigaPoolLocation, "unwanted:village/taiga/taiga_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-        }
-
-        // SAVANNA VILLAGE HOUSES
-        if (ModConfigHelper.generateSavannaHouses()) {
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_enchanter", ModConfigHelper.enchanterHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_musician", ModConfigHelper.musicianHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, savannaPoolLocation, "unwanted:village/savanna/savanna_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-        }
-
-        // SNOWY VILLAGE HOUSES
-        if (ModConfigHelper.generateSnowyHouses()) {
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_enchanter", ModConfigHelper.enchanterHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_musician", ModConfigHelper.musicianHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, snowyPoolLocation, "unwanted:village/snowy/snowy_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-        }
-
-        // DESERT VILLAGE HOUSES
-        if (ModConfigHelper.generateDesertHouses()) {
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_enchanter", ModConfigHelper.enchanterHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_musician", ModConfigHelper.musicianHouseWeight());
-            JigsawHelper.addBuildingToPool(templatePoolRegistry, processorListRegistry, desertPoolLocation, "unwanted:village/desert/desert_gem_cutter", ModConfigHelper.gemCutterHouseWeight());
-        }
-    }
-
-    @SubscribeEvent
-    public void onServerAboutToStartEvent(ServerAboutToStartEvent event) {
-//        Unwanted.registerJigsaws(event.getServer());
-    }
-
 }

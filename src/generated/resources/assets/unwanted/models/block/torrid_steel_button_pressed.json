@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "unwanted:block/torrid_steel_block"
+  }
+}

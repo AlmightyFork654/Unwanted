@@ -46,6 +46,17 @@
 
   "item.unwanted.marble_shard": "Marble Shard",
 
+  "item.unwanted.tea_cup": "Tea Cup",
+  "item.unwanted.grassy_tea": "Grassy Tea",
+  "item.unwanted.warped_tea": "Warped Tea",
+  "item.unwanted.crimson_tea": "Crimson Tea",
+  "item.unwanted.leavy_tea": "Leavy Tea",
+  "item.unwanted.kelped_tea": "Kelped Tea",
+  "item.unwanted.viney_tea": "Viney Tea",
+  "item.unwanted.glowy_tea": "Glowy Tea",
+  "item.unwanted.sculked_tea": "Sculked Tea",
+  "item.unwanted.rooted_tea": "Rooted Tea",
+
   "block.unwanted.marble_stairs": "Marble Stairs",
   "block.unwanted.smooth_marble_stairs": "Smooth Marble Stairs",
   "block.unwanted.polished_marble_stairs": "Polished Marble Stairs",
@@ -115,6 +126,7 @@
   "block.unwanted.gem_infuser": "Gem Infuser",
   "item.unwanted.gem_infuser": "Gem Infuser",
   "block.unwanted.torrid_furnace": "Torrid Furnace",
+  "block.unwanted.kettle": "Kettle",
 
   "block.unwanted.torrid_bush": "Torrid Bush",
   "block.unwanted.potted_torrid_bush": "Potted Torrid Bush",
@@ -143,6 +155,18 @@
   "item.unwanted.profundium_shovel": "Profundium Shovel",
   "item.unwanted.profundium_hoe": "Profundium Hoe",
 
+  "item.unwanted.wooden_spear_head" : "Wooden Spear Head",
+
+  "item.unwanted.wooden_spear" : "Wooden Spear",
+  "item.unwanted.stone_spear" : "Stone Spear",
+  "item.unwanted.iron_spear" : "Iron Spear",
+  "item.unwanted.gold_spear" : "Gold Spear",
+  "item.unwanted.diamond_spear" : "Diamond Spear",
+  "item.unwanted.netherite_spear" : "Netherite Spear",
+  "item.unwanted.torrid_steel_spear" : "Torrid Steel Spear",
+  "item.unwanted.embarium_spear" : "Embarium Spear",
+  "item.unwanted.profundium_spear" : "Profundium Spear",
+
   "item.unwanted.embarium_helmet": "Embarium Helmet",
   "item.unwanted.embarium_chestplate": "Embarium Chestplate",
   "item.unwanted.embarium_leggings": "Embarium Leggings",
@@ -162,6 +186,8 @@
   "item.unwanted.profundium_chestplate": "Profundium Chestplate",
   "item.unwanted.profundium_leggings": "Profundium Leggings",
   "item.unwanted.profundium_boots": "Profundium Boots",
+
+  "item.unwanted.elytra_glider": "Glider",
 
   "block.unwanted.profundium_block": "Block of Profundium",
   "block.unwanted.profundium_ore": "Ancient Detritus",
@@ -192,12 +218,19 @@
   "block.unwanted.ebony_trapdoor": "Ebony Trapdoor",
   "block.unwanted.ebony_button": "Ebony Button",
   "block.unwanted.ebony_pressure_plate": "Ebony Pressure Plate",
+  "block.unwanted.ebony_sign": "Ebony Sign",
+  "block.unwanted.ebony_hanging_sign": "Ebony Hanging Sign",
+  "item.unwanted.ebony_boat": "Ebony Boat",
+  "item.unwanted.ebony_chest_boat": "Ebony Chest Boat",
+
+  "entity.unwanted.mod_chest_boat": "Boat with Chest",
 
 
-  "effect.unwanted.energy": "Energy",
-  "item.minecraft.potion.effect.energy_potion": "Energy Potion",
-  "item.minecraft.splash_potion.effect.energy_potion": "Splash Potion Of Energy",
-  "item.minecraft.lingering_potion.effect.energy_potion": "Lingering Potion of Energy",
+  "effect.unwanted.fragile": "Vulnerability",
+  "item.minecraft.potion.effect.fragile_potion": "Vulnerability Potion",
+  "item.minecraft.splash_potion.effect.fragile_potion": "Splash Potion Of Vulnerability",
+  "item.minecraft.lingering_potion.effect.fragile_potion": "Lingering Potion of Vulnerability",
+  "item.minecraft.tipped_arrow.effect.fragile_potion": "Lingering Potion of Vulnerability",
 
   "entity.minecraft.villager.unwanted.enchanter": "Enchanter",
   "entity.minecraft.villager.unwanted.musician": "Musician",

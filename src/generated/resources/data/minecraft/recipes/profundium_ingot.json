@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "unwanted:profundium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "unwanted:profundium_ingot"
+  }
+}

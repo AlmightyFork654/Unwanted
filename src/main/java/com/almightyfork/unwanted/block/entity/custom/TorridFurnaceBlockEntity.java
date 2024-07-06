@@ -8,6 +8,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -38,6 +41,9 @@ public class TorridFurnaceBlockEntity extends BlockEntity implements MenuProvide
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if (!level.isClientSide()){
+                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+            }
         }
     };
 
@@ -78,6 +84,15 @@ public class TorridFurnaceBlockEntity extends BlockEntity implements MenuProvide
                 return 4;
             }
         };
+    }
+
+    public  ItemStack getRenderStack() {
+        if(itemHandler.getStackInSlot(3).isEmpty()) {
+            return itemHandler.getStackInSlot(2);
+        }
+        else {
+            return itemHandler.getStackInSlot(3);
+        }
     }
 
     @Override
@@ -229,5 +244,16 @@ public class TorridFurnaceBlockEntity extends BlockEntity implements MenuProvide
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
         return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        return saveWithoutMetadata();
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 }

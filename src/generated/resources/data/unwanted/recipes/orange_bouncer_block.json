@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "c": {
+      "item": "minecraft:orange_carpet"
+    },
+    "s": {
+      "item": "minecraft:slime_block"
+    },
+    "w": {
+      "item": "minecraft:orange_wool"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "item": "unwanted:orange_bouncer_block"
+  },
+  "show_notification": true
+}

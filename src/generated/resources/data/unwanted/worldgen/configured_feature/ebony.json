@@ -9,9 +9,10 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:dark_oak_foliage_placer",
-      "offset": 1,
-      "radius": 1
+      "type": "unwanted:ebony_foliage_placer",
+      "height": 5,
+      "offset": 0,
+      "radius": 4
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
@@ -33,10 +34,10 @@
       "upper_size": 2
     },
     "trunk_placer": {
-      "type": "minecraft:dark_oak_trunk_placer",
+      "type": "unwanted:ebony_trunk_placer",
       "base_height": 2,
-      "height_rand_a": 4,
-      "height_rand_b": 3
+      "height_rand_a": 2,
+      "height_rand_b": 2
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",

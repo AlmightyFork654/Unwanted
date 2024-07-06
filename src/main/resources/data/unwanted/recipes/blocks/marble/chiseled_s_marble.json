@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "unwanted:marble_bricks"
-    },
-    "result": "unwanted:chiseled_s_marble",
-    "count": 1
-}

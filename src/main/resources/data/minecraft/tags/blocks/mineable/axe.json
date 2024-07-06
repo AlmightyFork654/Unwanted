@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#unwanted:ebony_logs",
-    "unwanted:ebony_planks",
-    "unwanted:ebony_stairs",
-    "unwanted:ebony_slab"
-  ]
-}

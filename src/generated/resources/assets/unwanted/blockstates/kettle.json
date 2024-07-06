@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "unwanted:block/kettle",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "unwanted:block/kettle"
+    },
+    "facing=south": {
+      "model": "unwanted:block/kettle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "unwanted:block/kettle",
+      "y": 270
+    }
+  }
+}

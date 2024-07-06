@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "rough_ruby",
+  "ingredient": {
+    "item": "unwanted:ruby_ore"
+  },
+  "result": "unwanted:rough_ruby"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "torrid_steel_ingot",
+  "key": {
+    "#": {
+      "item": "unwanted:torrid_steel_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "unwanted:torrid_steel_ingot"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unwanted:wooden_spear"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wooden_spear_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "unwanted:wooden_spear_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wooden_spear_head",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unwanted:wooden_spear"
+    ]
+  },
+  "sends_telemetry_event": false
+}

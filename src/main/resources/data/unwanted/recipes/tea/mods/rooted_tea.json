@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:kettle",
+  "ingredients": [
+    {
+      "item": "unwanted:rooted_tea"
+    },
+    {
+      "tag": "unwanted:mods"
+    }
+  ],
+  "output": {
+    "item": "unwanted:rooted_tea"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "unwanted:ingots"
+    },
+    {
+      "tag": "unwanted:ingots"
+    },
+    {
+      "tag": "unwanted:ingots"
+    },
+    {
+      "tag": "unwanted:ingots"
+    },
+    {
+      "item": "unwanted:profundium_scrap"
+    },
+    {
+      "item": "unwanted:profundium_scrap"
+    },
+    {
+      "item": "unwanted:profundium_scrap"
+    },
+    {
+      "item": "unwanted:profundium_scrap"
+    }
+  ],
+  "result": {
+    "item": "unwanted:profundium_ingot"
+  }
+}

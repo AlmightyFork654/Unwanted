@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "w": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "  w",
+    "ww ",
+    "ww "
+  ],
+  "result": {
+    "count": 2,
+    "item": "unwanted:wooden_spear_head"
+  },
+  "show_notification": true
+}

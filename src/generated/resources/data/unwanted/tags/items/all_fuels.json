@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:lava_bucket",
+    "minecraft:coal",
+    "minecraft:coal_block",
+    "minecraft:charcoal",
+    "minecraft:dried_kelp_block",
+    "minecraft:scaffolding",
+    "minecraft:bamboo",
+    "minecraft:stick",
+    "#unwanted:fuels",
+    "#minecraft:planks",
+    "#minecraft:logs"
+  ]
+}

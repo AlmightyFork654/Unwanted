@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:kettle",
+  "ingredients": [
+    {
+      "item": "unwanted:warped_tea"
+    },
+    {
+      "tag": "unwanted:teleports"
+    }
+  ],
+  "output": {
+    "item": "unwanted:warped_tea"
+  }
+}

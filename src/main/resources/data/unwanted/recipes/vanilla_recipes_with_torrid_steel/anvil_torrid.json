@@ -15,5 +15,6 @@
   },
   "result": {
     "item": "minecraft:anvil"
-  }
+  },
+  "group": "anvil"
 }

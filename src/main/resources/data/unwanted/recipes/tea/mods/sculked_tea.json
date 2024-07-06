@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:kettle",
+  "ingredients": [
+    {
+      "item": "unwanted:sculked_tea"
+    },
+    {
+      "tag": "unwanted:mods"
+    }
+  ],
+  "output": {
+    "item": "unwanted:sculked_tea"
+  }
+}

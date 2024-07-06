@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_embarium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "unwanted:deepslate_embarium_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unwanted:embarium_from_blasting_deepslate_embarium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_deepslate_embarium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unwanted:embarium_from_blasting_deepslate_embarium_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

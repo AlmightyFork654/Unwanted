@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "c": {
+      "item": "minecraft:white_carpet"
+    },
+    "s": {
+      "item": "minecraft:slime_block"
+    },
+    "w": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "item": "unwanted:white_bouncer_block"
+  },
+  "show_notification": true
+}

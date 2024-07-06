@@ -1,9 +1,0 @@
-{
-    "type": "minecraft:smelting",
-    "ingredient": {
-        "item": "unwanted:torrid_steel_ore"
-    },
-    "result": "unwanted:torrid_steel_ingot",
-    "experience": 5,
-    "cookingtime": 100
-}

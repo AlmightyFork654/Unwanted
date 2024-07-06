@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "unwanted:block/mossy_marble_bricks_slab"
+    },
+    "type=double": {
+      "model": "unwanted:block/mossy_marble_bricks"
+    },
+    "type=top": {
+      "model": "unwanted:block/mossy_marble_bricks_slab_top"
+    }
+  }
+}

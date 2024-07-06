@@ -1,9 +1,0 @@
-{
-    "type": "minecraft:blasting",
-    "ingredient": {
-        "item": "unwanted:torrid_steel_ore"
-    },
-    "result": "unwanted:torrid_steel_ingot",
-    "experience": 8,
-    "cookingtime": 40
-}

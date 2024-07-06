@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "unwanted:block/gem_infuser",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "unwanted:block/gem_infuser"
+    },
+    "facing=south": {
+      "model": "unwanted:block/gem_infuser",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "unwanted:block/gem_infuser",
+      "y": 270
+    }
+  }
+}

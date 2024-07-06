@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "unwanted:nuggets"
+    },
+    {
+      "tag": "unwanted:nuggets"
+    },
+    {
+      "tag": "unwanted:nuggets"
+    },
+    {
+      "tag": "unwanted:nuggets"
+    },
+    {
+      "item": "unwanted:profundium_flake"
+    },
+    {
+      "item": "unwanted:profundium_flake"
+    },
+    {
+      "item": "unwanted:profundium_flake"
+    },
+    {
+      "item": "unwanted:profundium_flake"
+    }
+  ],
+  "result": {
+    "item": "unwanted:profundium_scrap"
+  }
+}

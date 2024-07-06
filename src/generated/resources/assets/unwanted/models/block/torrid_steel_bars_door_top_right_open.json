@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "unwanted:block/torrid_steel_bars_door_bottom",
+    "top": "unwanted:block/torrid_steel_bars_door_top"
+  }
+}

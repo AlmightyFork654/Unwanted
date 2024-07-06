@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:gem_cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_block"
+    },
+    {
+      "item": "#unwanted:chisels"
+    }
+  ],
+  "output": {
+    "item": "minecraft:amethyst_shard"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "unwanted:cracked_marble_bricks"
+  },
+  "result": "unwanted:cracked_marble_bricks_slab"
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unwanted:torrid_steel_bars_trapdoor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torrid_steel_bars": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "unwanted:torrid_steel_bars"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_torrid_steel_bars",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unwanted:torrid_steel_bars_trapdoor"
+    ]
+  },
+  "sends_telemetry_event": false
+}

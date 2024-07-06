@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "e": {
+      "item": "unwanted:embarium"
+    },
+    "m": {
+      "item": "unwanted:marble"
+    },
+    "s": {
+      "item": "minecraft:slime_block"
+    }
+  },
+  "pattern": [
+    "sss",
+    "mem",
+    "mmm"
+  ],
+  "result": {
+    "count": 3,
+    "item": "unwanted:speeder_block"
+  },
+  "show_notification": true
+}

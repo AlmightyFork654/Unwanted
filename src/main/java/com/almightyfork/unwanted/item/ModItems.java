@@ -2,22 +2,30 @@ package com.almightyfork.unwanted.item;
 
 import com.almightyfork.unwanted.Unwanted;
 import com.almightyfork.unwanted.block.ModBlocks;
+import com.almightyfork.unwanted.entity.custom.ModBoatEntity;
 import com.almightyfork.unwanted.item.armor.*;
-import com.almightyfork.unwanted.item.custom.GemInfuserItem;
-import com.almightyfork.unwanted.item.custom.ModDiskItem;
-import com.almightyfork.unwanted.item.custom.PureBlazePowderItem;
+import com.almightyfork.unwanted.item.custom.*;
 import com.almightyfork.unwanted.item.tools.*;
 import com.almightyfork.unwanted.item.tools.pickaxe.SpeedPickaxeItem;
 import com.almightyfork.unwanted.item.tools.pickaxe.SuperPickaxeItem;
 import com.almightyfork.unwanted.item.tools.sword.FireSwordItem;
 import com.almightyfork.unwanted.item.tools.sword.RegenSwordItem;
 import com.almightyfork.unwanted.item.tools.sword.SuperSwordItem;
+import com.almightyfork.unwanted.item.trident.iron.IronSpearItem;
+import com.almightyfork.unwanted.item.trident.wood.WoodenSpearItem;
+import com.almightyfork.unwanted.potion.effect.ModEffects;
 import com.almightyfork.unwanted.sound.ModSounds;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
+import java.util.Optional;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -73,6 +81,41 @@ public class ModItems {
     public static final RegistryObject<Item> GEM_INFUSER_ITEM = ITEMS.register("gem_infuser",
             () -> new GemInfuserItem(ModBlocks.GEM_INFUSER.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> EBONY_SIGN = ITEMS.register("ebony_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.EBONY_SIGN.get(), ModBlocks.EBONY_WALL_SIGN.get()));
+    public static final RegistryObject<Item> EBONY_HANGING_SIGN = ITEMS.register("ebony_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.EBONY_HANGING_SIGN.get(), ModBlocks.EBONY_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> EBONY_BOAT = ITEMS.register("ebony_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.EBONY, new Item.Properties()));
+    public static final RegistryObject<Item> EBONY_CHEST_BOAT = ITEMS.register("ebony_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.EBONY, new Item.Properties()));
+
+    public static final RegistryObject<Item> WOODEN_SPEAR_HEAD = ITEMS.register("wooden_spear_head",
+            ()-> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TEA_CUP = ITEMS.register("tea_cup",
+            ()-> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> GRASSY_TEA = ITEMS.register("grassy_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> WARPED_TEA = ITEMS.register("warped_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> CRIMSON_TEA = ITEMS.register("crimson_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> LEAVY_TEA = ITEMS.register("leavy_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> KELPED_TEA = ITEMS.register("kelped_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> VINEY_TEA = ITEMS.register("viney_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> GLOWY_TEA = ITEMS.register("glowy_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> SCULKED_TEA = ITEMS.register("sculked_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+    public static final RegistryObject<Item> ROOTED_TEA = ITEMS.register("rooted_tea",
+            ()-> new ComplexTeaItem(new Item.Properties()));
+
     //music
 
     public static final RegistryObject<Item> DARKNESS_MUSIC_DISK = ITEMS.register("darkness_music_disc",
@@ -84,6 +127,12 @@ public class ModItems {
     //tools&armor
 
         //tools
+
+    public static final RegistryObject<Item> WOODEN_SPEAR = ITEMS.register("wooden_spear",
+            () -> new WoodenSpearItem(new Item.Properties().durability(32)));
+
+    public static final RegistryObject<Item> IRON_SPEAR = ITEMS.register("iron_spear",
+            () -> new IronSpearItem(new Item.Properties().durability(64)));
 
     //Ruby detector
 
@@ -160,6 +209,9 @@ public class ModItems {
     //armor
 
     //elytra armors
+
+    public static final RegistryObject<Item> ELYTRA_GLIDER = ITEMS.register("elytra_glider",
+            () -> new ElytraGliderItem(new Item.Properties().durability(128)));
 
     //embarium
 

@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:kettle",
+  "ingredients": [
+    {
+      "item": "unwanted:glowy_tea"
+    },
+    {
+      "tag": "unwanted:additives"
+    }
+  ],
+  "output": {
+    "item": "unwanted:glowy_tea"
+  }
+}

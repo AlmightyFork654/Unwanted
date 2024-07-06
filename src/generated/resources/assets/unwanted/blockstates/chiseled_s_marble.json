@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "unwanted:block/chiseled_s_marble",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "unwanted:block/chiseled_s_marble"
+    },
+    "facing=south": {
+      "model": "unwanted:block/chiseled_s_marble",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "unwanted:block/chiseled_s_marble",
+      "y": 270
+    }
+  }
+}

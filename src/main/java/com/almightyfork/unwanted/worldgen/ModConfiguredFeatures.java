@@ -2,6 +2,8 @@ package com.almightyfork.unwanted.worldgen;
 
 import com.almightyfork.unwanted.Unwanted;
 import com.almightyfork.unwanted.block.ModBlocks;
+import com.almightyfork.unwanted.worldgen.tree.custom.EbonyFoliagePlacer;
+import com.almightyfork.unwanted.worldgen.tree.custom.EbonyTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -15,10 +17,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
@@ -68,9 +67,9 @@ public class ModConfiguredFeatures {
 
         register(context, EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.EBONY_LOG.get()),
-                new DarkOakTrunkPlacer(2, 4, 3),
+                new EbonyTrunkPlacer(2, 2, 2),
                 BlockStateProvider.simple(ModBlocks.EBONY_LEAVES.get()),
-                new DarkOakFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1)),
+                new EbonyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), 5),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, TORRID_KEY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(

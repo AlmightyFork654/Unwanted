@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:kettle",
+  "ingredients": [
+    {
+      "item": "unwanted:grassy_tea"
+    },
+    {
+      "tag": "unwanted:mods"
+    }
+  ],
+  "output": {
+    "item": "unwanted:grassy_tea"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "m": {
+      "item": "unwanted:marble_bricks"
+    }
+  },
+  "pattern": [
+    "m",
+    "m"
+  ],
+  "result": {
+    "count": 2,
+    "item": "unwanted:marble_pillar"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "p": {
+      "item": "minecraft:polished_blackstone_slab"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " i ",
+    "rir",
+    "ppp"
+  ],
+  "result": {
+    "item": "unwanted:gem_infuser"
+  },
+  "show_notification": true
+}

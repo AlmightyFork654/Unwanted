@@ -1,0 +1,14 @@
+{
+  "type": "unwanted:torrid_furnace",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "unwanted:chisel"
+    }
+  ],
+  "output": {
+    "item": "unwanted:netherite_chisel"
+  }
+}

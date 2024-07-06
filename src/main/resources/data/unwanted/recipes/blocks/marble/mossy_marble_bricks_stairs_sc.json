@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "unwanted:mossy_marble_bricks"
-    },
-    "result": "unwanted:mossy_marble_bricks_stairs",
-    "count": 1
-}

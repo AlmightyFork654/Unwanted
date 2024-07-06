@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "unwanted:marble_shard"
+    }
+  },
+  "pattern": [
+    "m m",
+    " m "
+  ],
+  "result": {
+    "count": 4,
+    "item": "unwanted:tea_cup"
+  },
+  "show_notification": true
+}

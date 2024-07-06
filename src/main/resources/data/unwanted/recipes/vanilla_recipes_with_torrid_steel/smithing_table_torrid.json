@@ -15,5 +15,6 @@
   },
   "result": {
     "item": "minecraft:smithing_table"
-  }
+  },
+  "group": "table"
 }

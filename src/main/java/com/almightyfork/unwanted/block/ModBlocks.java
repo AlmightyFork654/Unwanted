@@ -3,6 +3,7 @@ package com.almightyfork.unwanted.block;
 import com.almightyfork.unwanted.Unwanted;
 import com.almightyfork.unwanted.block.custom.*;
 import com.almightyfork.unwanted.item.ModItems;
+import com.almightyfork.unwanted.misc.ModWoodTypes;
 import com.almightyfork.unwanted.sound.ModSounds;
 import com.almightyfork.unwanted.worldgen.tree.EbonyTreeGrower;
 import net.minecraft.core.BlockPos;
@@ -66,14 +67,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EMBARIUM_BLOCK = registerBlock("embarium_block",
             () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(ModSounds.EMBARIUM_SOUNDS)
-                    .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> 8)));
+                    .strength(0.3F, 0.3F).destroyTime(3).requiresCorrectToolForDrops().lightLevel((blockState) -> 8)));
 
     public static final RegistryObject<Block> PROFUNDIUM_BLOCK = registerBlock("profundium_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).sound(SoundType.METAL).strength(50F, 50F).destroyTime(10)));
 
     public static final RegistryObject<Block> EMBARIUM_LAMP_BLOCK = registerBlock("embarium_lamp_block",
             () -> new EmbariumLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP).sound(SoundType.AMETHYST_CLUSTER)
-                    .strength(5F, 6F).destroyTime(8).requiresCorrectToolForDrops().lightLevel((blockState) -> blockState.getValue(EmbariumLampBlock.CLICKED) ? 15 : 0)));
+                    .strength(0.3F, 0.3F).destroyTime(3).requiresCorrectToolForDrops().lightLevel((blockState) -> blockState.getValue(EmbariumLampBlock.CLICKED) ? 15 : 0)));
 
 
     //crafting
@@ -86,6 +87,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TORRID_FURNACE = registerBlock("torrid_furnace",
             () -> new TorridFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
+
+    public static final RegistryObject<Block> KETTLE = registerBlock("kettle",
+            () -> new KettleBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE).noOcclusion()));
 
     //bouncy
 
@@ -123,7 +127,7 @@ public class ModBlocks {
             () -> new BouncerBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(0.5F).destroyTime(1).instabreak().dynamicShape()));
 
     public static final RegistryObject<Block> SPEEDER_BLOCK = registerBlock("speeder_block",
-            () -> new SpeederBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 1F).friction(1.0F).destroyTime(1).instabreak()));
+            () -> new SpeederBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE).sound(SoundType.SLIME_BLOCK).strength(1F, 3F).friction(1.0F)));
 
     //marble
     public static final RegistryObject<Block> MARBLE = registerBlock("marble",
@@ -132,11 +136,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SMOOTH_MARBLE = registerBlock("smooth_marble",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DOUBLE_SMOOTH_MARBLE_SLAB = registerBlock("double_smooth_marble_slab",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops().noLootTable()));
     public static final RegistryObject<Block> POLISHED_MARBLE = registerBlock("polished_marble",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DOUBLE_POLISHED_MARBLE_SLAB = registerBlock("double_polished_marble_slab",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(3).requiresCorrectToolForDrops().noLootTable()));
 
     public static final RegistryObject<Block> MARBLE_BRICKS = registerBlock("marble_bricks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
@@ -146,13 +150,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> CHISELED_W_MARBLE = registerBlock("chiseled_w_marble",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new SimpleRotateableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_S_MARBLE = registerBlock("chiseled_s_marble",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new SimpleRotateableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_C_MARBLE = registerBlock("chiseled_c_marble",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new SimpleRotateableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_E_MARBLE = registerBlock("chiseled_e_marble",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
+            () -> new SimpleRotateableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> MARBLE_PILLAR = registerBlock("marble_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.5F, 6F).destroyTime(2).requiresCorrectToolForDrops()));
@@ -298,6 +302,11 @@ public class ModBlocks {
                 public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
                     return 60;
                 }
+
+                @Override
+                protected boolean decaying(BlockState p_221386_) {
+                    return !p_221386_.getValue(PERSISTENT) && p_221386_.getValue(DISTANCE) == 12;
+                }
             });
 
     public static final RegistryObject<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
@@ -315,9 +324,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> EBONY_SLAB = registerBlock("ebony_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)
                     .strength(1F, 2F)));
-
-//    FIR_SIGN = registerBlockNoBlockItem(() -> new StandingSignBlockBOP(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), BOPWoodTypes.FIR), "fir_sign");
-//    FIR_WALL_SIGN = registerBlockNoBlockItem(() -> new WallSignBlockBOP(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(FIR_SIGN), BOPWoodTypes.FIR), "fir_wall_sign");
 
     public static final RegistryObject<Block> EBONY_FENCE = registerBlock("ebony_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
@@ -339,6 +345,16 @@ public class ModBlocks {
     public static final RegistryObject<Block> EBONY_TRAPDOOR = registerBlock("ebony_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)
                     .strength(1F, 2F).noOcclusion(), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> EBONY_SIGN = BLOCKS.register("ebony_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_SIGN), ModWoodTypes.EBONY));
+    public static final RegistryObject<Block> EBONY_WALL_SIGN = BLOCKS.register("ebony_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_SIGN), ModWoodTypes.EBONY));
+
+    public static final RegistryObject<Block> EBONY_HANGING_SIGN = BLOCKS.register("ebony_hanging_sign",
+            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_HANGING_SIGN), ModWoodTypes.EBONY));
+    public static final RegistryObject<Block> EBONY_WALL_HANGING_SIGN = BLOCKS.register("ebony_wall_hanging_sign",
+            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_HANGING_SIGN), ModWoodTypes.EBONY));
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {

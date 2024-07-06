@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "unwanted:item/cave_whispers_music_disc"
+  }
+}

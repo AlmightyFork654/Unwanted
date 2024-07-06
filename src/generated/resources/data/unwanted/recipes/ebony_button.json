@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "unwanted:ebony_planks"
+    }
+  ],
+  "result": {
+    "item": "unwanted:ebony_button"
+  }
+}

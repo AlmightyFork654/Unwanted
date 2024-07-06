@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "torrid_steel_ingot",
+  "ingredient": {
+    "item": "unwanted:torrid_steel_ore"
+  },
+  "result": "unwanted:torrid_steel_ingot"
+}

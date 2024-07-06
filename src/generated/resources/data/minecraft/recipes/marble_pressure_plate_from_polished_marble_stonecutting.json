@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "unwanted:polished_marble"
+  },
+  "result": "unwanted:marble_pressure_plate"
+}

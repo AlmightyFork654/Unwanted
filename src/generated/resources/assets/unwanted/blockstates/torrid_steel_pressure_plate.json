@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "unwanted:block/torrid_steel_pressure_plate"
+    },
+    "powered=true": {
+      "model": "unwanted:block/torrid_steel_pressure_plate_down"
+    }
+  }
+}

@@ -15,5 +15,6 @@
   },
   "result": {
     "item": "minecraft:chain"
-  }
+  },
+  "group": "chain"
 }

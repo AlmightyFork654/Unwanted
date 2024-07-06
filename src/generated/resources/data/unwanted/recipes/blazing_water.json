@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "unwanted:pure_blaze_powder"
+    },
+    "w": {
+      "item": "minecraft:potion"
+    }
+  },
+  "pattern": [
+    "pwp",
+    "wpw",
+    "pwp"
+  ],
+  "result": {
+    "count": 4,
+    "item": "unwanted:blazing_water"
+  },
+  "show_notification": true
+}

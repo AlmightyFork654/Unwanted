@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:basalt"
+    },
+    "f": {
+      "item": "minecraft:blast_furnace"
+    },
+    "t": {
+      "item": "unwanted:torrid_steel_ingot"
+    }
+  },
+  "pattern": [
+    "ttt",
+    "tft",
+    "bbb"
+  ],
+  "result": {
+    "item": "unwanted:torrid_furnace"
+  },
+  "show_notification": true
+}
