@@ -24,13 +24,15 @@ public class IronSpearItem extends Item implements Vanishable {
     public static final float BASE_DAMAGE = 5.0F;
     public static final float SHOOT_POWER = 3.5F;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
+    public final float damageVal;
 
-    public IronSpearItem(Item.Properties p_43381_) {
+    public IronSpearItem(Item.Properties p_43381_, double damage, float speed) {
         super(p_43381_);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 3.0D, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", (double)-1F, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", damage, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", (double)speed, AttributeModifier.Operation.ADDITION));
         this.defaultModifiers = builder.build();
+        this.damageVal = ((float) damage);
     }
 
     public boolean canAttackBlock(BlockState p_43409_, Level p_43410_, BlockPos p_43411_, Player p_43412_) {
@@ -110,7 +112,7 @@ public class IronSpearItem extends Item implements Vanishable {
         if (p_43396_ instanceof Player player) {
             int i = this.getUseDuration(p_43394_) - p_43397_;
             if (i >= 10) {
-                IronThrownSpear thrownSpear = new IronThrownSpear(p_43395_, player, p_43394_);
+                IronThrownSpear thrownSpear = new IronThrownSpear(p_43395_, player, p_43394_, damageVal);
                 thrownSpear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F + (float) 0 * 0.5F, 1.0F);
                 if (player.getAbilities().instabuild) {
                     thrownSpear.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;

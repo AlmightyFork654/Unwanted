@@ -132,10 +132,10 @@ public class ModItems {
         //tools
 
     public static final RegistryObject<Item> WOODEN_SPEAR = ITEMS.register("wooden_spear",
-            () -> new WoodenSpearItem(new Item.Properties().durability(32)));
+            () -> new WoodenSpearItem(new Item.Properties().durability(32), 3.0D, -1F));
 
     public static final RegistryObject<Item> IRON_SPEAR = ITEMS.register("iron_spear",
-            () -> new IronSpearItem(new Item.Properties().durability(64)));
+            () -> new IronSpearItem(new Item.Properties().durability(64), 5.0D, -1F));
 
     //Ruby detector
 

@@ -32,16 +32,18 @@ public class WoodenThrownSpear extends AbstractArrow {
     private ItemStack SpearItem = new ItemStack(ModItems.WOODEN_SPEAR.get());
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
+    public float damageVal;
 
     public WoodenThrownSpear(EntityType<? extends WoodenThrownSpear> p_37561_, Level p_37562_) {
         super(p_37561_, p_37562_);
     }
 
-    public WoodenThrownSpear(Level p_37569_, LivingEntity p_37570_, ItemStack p_37571_) {
+    public WoodenThrownSpear(Level p_37569_, LivingEntity p_37570_, ItemStack p_37571_, float damage) {
         super(ModEntities.WOODEN_SPEAR.get(), p_37570_, p_37569_);
         this.SpearItem = p_37571_.copy();
         this.entityData.set(ID_LOYALTY, (byte)EnchantmentHelper.getLoyalty(p_37571_));
         this.entityData.set(ID_FOIL, p_37571_.hasFoil());
+        this.damageVal = damage;
     }
 
     protected void defineSynchedData() {
@@ -109,7 +111,7 @@ public class WoodenThrownSpear extends AbstractArrow {
 
     protected void onHitEntity(EntityHitResult p_37573_) {
         Entity entity = p_37573_.getEntity();
-        float f = 4.0F;
+        float f = damageVal + 1F;
         if (entity instanceof LivingEntity livingentity) {
             f += EnchantmentHelper.getDamageBonus(this.SpearItem, livingentity.getMobType());
         }
