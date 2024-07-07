@@ -14,7 +14,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class SpearModel extends Model {
-//    public static final ResourceLocation TEXTURE = new ResourceLocation(Unwanted.MODID,"textures/entity/spear_in_hand.png");
 
     private final ModelPart root;
 

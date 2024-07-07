@@ -47,6 +47,7 @@
   "item.unwanted.marble_shard": "Marble Shard",
 
   "item.unwanted.tea_cup": "Tea Cup",
+  "item.unwanted.cup_of_water": "Cup of Water",
   "item.unwanted.grassy_tea": "Grassy Tea",
   "item.unwanted.warped_tea": "Warped Tea",
   "item.unwanted.crimson_tea": "Crimson Tea",
@@ -188,6 +189,7 @@
   "item.unwanted.profundium_boots": "Profundium Boots",
 
   "item.unwanted.elytra_glider": "Glider",
+  "item.unwanted.mechanical_elytra": "Mechanical Elytra",
 
   "block.unwanted.profundium_block": "Block of Profundium",
   "block.unwanted.profundium_ore": "Ancient Detritus",
@@ -235,6 +237,9 @@
   "entity.minecraft.villager.unwanted.enchanter": "Enchanter",
   "entity.minecraft.villager.unwanted.musician": "Musician",
   "entity.minecraft.villager.unwanted.gem_cutter": "Gem Cutter",
-  "entity.minecraft.villager.unwanted.collector": "Collector"
+  "entity.minecraft.villager.unwanted.collector": "Collector",
+
+  "key.unwanted.boost": "Mech Elytra Boost",
+  "key.unwanted.craw": "Craw"
 
 }

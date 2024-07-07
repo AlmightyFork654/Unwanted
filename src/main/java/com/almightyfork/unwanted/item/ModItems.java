@@ -95,6 +95,9 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TEA_CUP = ITEMS.register("tea_cup",
+            ()-> new TeaCup(new Item.Properties()));
+
+    public static final RegistryObject<Item> CUP_OF_WATER = ITEMS.register("cup_of_water",
             ()-> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GRASSY_TEA = ITEMS.register("grassy_tea",
@@ -212,6 +215,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> ELYTRA_GLIDER = ITEMS.register("elytra_glider",
             () -> new ElytraGliderItem(new Item.Properties().durability(128)));
+
+    public static final RegistryObject<Item> MECHANICAL_ELYTRA = ITEMS.register("mechanical_elytra",
+            () -> new MechanicalElytraItem(new Item.Properties().stacksTo(1)));
 
     //embarium
 

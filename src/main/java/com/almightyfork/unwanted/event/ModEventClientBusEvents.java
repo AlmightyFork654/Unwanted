@@ -69,6 +69,7 @@ public class ModEventClientBusEvents {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.EBONY_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.EBONY_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+
         event.registerLayerDefinition(ModModelLayers.WOODEN_SPEAR, SpearModel::createLayer);
         event.registerLayerDefinition(ModModelLayers.IRON_SPEAR, SpearModel::createLayer);
     }

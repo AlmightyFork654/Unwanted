@@ -2,7 +2,7 @@
   "type": "unwanted:kettle",
   "ingredients": [
     {
-      "item": "unwanted:tea_cup"
+      "item": "unwanted:cup_of_water"
     },
     {
       "tag": "unwanted:warped"

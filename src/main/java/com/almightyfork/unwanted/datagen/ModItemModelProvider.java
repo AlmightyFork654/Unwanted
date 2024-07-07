@@ -59,6 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PROFUNDIUM_FLAKE);
 
         simpleItem(ModItems.TEA_CUP);
+        simpleItem(ModItems.CUP_OF_WATER);
         simpleItem(ModItems.GRASSY_TEA);
         simpleItem(ModItems.WARPED_TEA);
         simpleItem(ModItems.CRIMSON_TEA);
@@ -116,6 +117,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.PROFUNDIUM_BOOTS);
 
         simpleItem(ModItems.ELYTRA_GLIDER);
+        simpleItem(ModItems.MECHANICAL_ELYTRA);
 
 //        //block-items
 

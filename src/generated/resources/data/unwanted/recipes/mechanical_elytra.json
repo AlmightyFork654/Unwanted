@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:elytra"
+    },
+    "p": {
+      "item": "unwanted:profundium_ingot"
+    },
+    "t": {
+      "item": "unwanted:torrid_steel_ingot"
+    }
+  },
+  "pattern": [
+    "tpt",
+    "tet",
+    "t t"
+  ],
+  "result": {
+    "item": "unwanted:mechanical_elytra"
+  },
+  "show_notification": true
+}

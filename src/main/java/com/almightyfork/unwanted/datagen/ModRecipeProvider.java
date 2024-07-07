@@ -480,6 +480,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.PHANTOM_MEMBRANE), has(Items.PHANTOM_MEMBRANE))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, ModItems.MECHANICAL_ELYTRA.get())
+                .pattern("tpt")
+                .pattern("tet")
+                .pattern("t t")
+                .define('t', ModItems.TORRID_STEEL_INGOT.get())
+                .define('e', Items.ELYTRA)
+                .define('p', ModItems.PROFUNDIUM_INGOT.get())
+                .unlockedBy(getHasName(Items.ELYTRA), has(Items.ELYTRA))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.WOODEN_SPEAR.get())
                 .pattern("  k")
                 .pattern(" s ")

@@ -11,6 +11,7 @@ import com.almightyfork.unwanted.item.armor.layers.*;
 import com.almightyfork.unwanted.item.trident.iron.ThrownIronSpearRenderer;
 import com.almightyfork.unwanted.item.trident.wood.ThrownWoodenSpearRenderer;
 import com.almightyfork.unwanted.misc.EPBrewingRecipe;
+import com.almightyfork.unwanted.misc.KeyBindings;
 import com.almightyfork.unwanted.misc.ModCreativeModeTabs;
 import com.almightyfork.unwanted.misc.ModWoodTypes;
 import com.almightyfork.unwanted.potion.ModPotions;
@@ -37,6 +38,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -116,6 +118,7 @@ public class Unwanted
             event.accept(ModItems.EBONY_CHEST_BOAT);
 
             event.accept(ModItems.TEA_CUP);
+            event.accept(ModItems.CUP_OF_WATER);
             event.accept(ModItems.GRASSY_TEA);
             event.accept(ModItems.WARPED_TEA);
             event.accept(ModItems.CRIMSON_TEA);
@@ -263,6 +266,7 @@ public class Unwanted
             event.accept(ModItems.PROFUNDIUM_LEGGINGS);
             event.accept(ModItems.PROFUNDIUM_BOOTS);
             event.accept(ModItems.ELYTRA_GLIDER);
+            event.accept(ModItems.MECHANICAL_ELYTRA);
         }
 
         if(event.getTab() == ModCreativeModeTabs.REDSTONE_TAB.get()) {
@@ -295,6 +299,12 @@ public class Unwanted
             EntityRenderers.register(ModEntities.WOODEN_SPEAR.get(), p_174420_ -> new ThrownWoodenSpearRenderer(p_174420_, ModModelLayers.WOODEN_SPEAR));
             EntityRenderers.register(ModEntities.IRON_SPEAR.get(), ThrownIronSpearRenderer::new);
         }
+
+        @SubscribeEvent
+        public static void registerKeys(RegisterKeyMappingsEvent event) {
+            event.register(KeyBindings.KEY_BINDINGS.boost);
+            event.register(KeyBindings.KEY_BINDINGS.craw);
+        }
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -305,6 +315,7 @@ public class Unwanted
                 LivingEntityRenderer<? extends Player, ? extends EntityModel<? extends Player>> livingEntityRenderer = addLayersEvent.getSkin(s);
                 if(livingEntityRenderer instanceof PlayerRenderer playerRenderer){
                     playerRenderer.addLayer(new ElytraGliderLayer(playerRenderer, entityModels));
+                    playerRenderer.addLayer(new MechanicalElytraLayer(playerRenderer, entityModels));
                     playerRenderer.addLayer(new ProfundiumElytraLayer(playerRenderer, entityModels));
                 }
             });
@@ -312,6 +323,7 @@ public class Unwanted
             if(livingEntityRenderer instanceof ArmorStandRenderer armorStandRenderer){
                 armorStandRenderer.addLayer(new ElytraGliderArmorStandLayer(armorStandRenderer, entityModels));
                 armorStandRenderer.addLayer(new ProfundiumElytraArmorStandLayer(armorStandRenderer, entityModels));
+                armorStandRenderer.addLayer(new MechanicalElytraArmorStandLayer(armorStandRenderer, entityModels));
             }
         }
     }

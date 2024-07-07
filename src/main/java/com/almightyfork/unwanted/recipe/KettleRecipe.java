@@ -89,10 +89,8 @@ public class KettleRecipe implements Recipe<SimpleContainer> {
 
         ItemStack itemInSlot1 = inv.getItem(1);
 
-        LogUtils.getLogger().info(String.valueOf(itemInSlot1));
 
         if (itemInSlot1.is(CustomTags.Items.BASE_TEA)) {
-            LogUtils.getLogger().info("base");
             if(!outputTag.contains("TeaType")) {
                 if (itemInSlot1.is(CustomTags.Items.GRASSY)) {
                     outputTag.putString("TeaType", "grassy");
@@ -125,7 +123,6 @@ public class KettleRecipe implements Recipe<SimpleContainer> {
         }
 
         if (itemInSlot1.is(CustomTags.Items.TELEPORTS)) {
-            LogUtils.getLogger().info("TP");
             if(!outputTag.contains("TP")) {
                 if (itemInSlot1.is(CustomTags.Items.SPAWN)) {
                     outputTag.putString("TP", "spawn");
@@ -143,7 +140,6 @@ public class KettleRecipe implements Recipe<SimpleContainer> {
         }
 
         if (itemInSlot1.is(CustomTags.Items.MODS)) {
-            LogUtils.getLogger().info("Mod");
             if (itemInSlot1.is(Items.REDSTONE)) {
                 modList.add(StringTag.valueOf("redstone"));
             }
@@ -157,7 +153,6 @@ public class KettleRecipe implements Recipe<SimpleContainer> {
 
 
         if (itemInSlot1.is(CustomTags.Items.ADDITIVES)) {
-            LogUtils.getLogger().info("Add");
             if (itemInSlot1.is(CustomTags.Items.RED_STUFF)) {
                 addList.add(StringTag.valueOf("red_stuff"));
             }
